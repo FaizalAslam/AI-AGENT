@@ -1,0 +1,477 @@
+{
+  "CREATE_DOCUMENT": {
+    "keywords": ["create document", "new document", "new word", "new file", "make document", "open new document", "blank document"],
+    "action": "create_document",
+    "params": {}
+  },
+  "OPEN_DOCUMENT": {
+    "keywords": ["open document", "open file", "open word", "load document", "load file", "import document"],
+    "action": "open_document",
+    "params": { "path": "{file_path}" }
+  },
+  "SAVE_DOCUMENT": {
+    "keywords": ["save", "save document", "save file", "save word", "save it", "save this"],
+    "action": "save_document",
+    "params": {}
+  },
+  "SAVE_DOCUMENT_AS": {
+    "keywords": ["save as", "save document as", "save file as", "export as", "save copy", "rename and save"],
+    "action": "save_document_as",
+    "params": { "filename": "{filename}" }
+  },
+  "CLOSE_DOCUMENT": {
+    "keywords": ["close document", "close file", "close word", "exit document"],
+    "action": "close_document",
+    "params": {}
+  },
+  "EXPORT_PDF": {
+    "keywords": ["export pdf", "save as pdf", "convert to pdf", "pdf export", "print to pdf", "export as pdf"],
+    "action": "export_pdf",
+    "params": { "path": "{output_path}" }
+  },
+  "PRINT_DOCUMENT": {
+    "keywords": ["print", "print document", "send to printer", "print now", "print file"],
+    "action": "print_document",
+    "params": {}
+  },
+
+  "ADD_PARAGRAPH": {
+    "keywords": ["add paragraph", "write paragraph", "new paragraph", "insert paragraph", "add text", "write text", "type text", "insert text", "add content", "write"],
+    "action": "add_paragraph",
+    "params": { "text": "{text}" }
+  },
+  "ADD_HEADING": {
+    "keywords": ["add heading", "insert heading", "create heading", "heading", "section title", "add title", "write heading"],
+    "action": "add_heading",
+    "params": { "text": "{text}", "level": "{level}" }
+  },
+  "ADD_HEADING_1": {
+    "keywords": ["heading 1", "h1", "main heading", "primary heading", "chapter title", "main title", "top heading", "level 1 heading"],
+    "action": "add_heading",
+    "params": { "text": "{text}", "level": 1 }
+  },
+  "ADD_HEADING_2": {
+    "keywords": ["heading 2", "h2", "subheading", "sub heading", "section heading", "secondary heading", "level 2 heading"],
+    "action": "add_heading",
+    "params": { "text": "{text}", "level": 2 }
+  },
+  "ADD_HEADING_3": {
+    "keywords": ["heading 3", "h3", "sub subheading", "minor heading", "tertiary heading", "level 3 heading"],
+    "action": "add_heading",
+    "params": { "text": "{text}", "level": 3 }
+  },
+  "ADD_HEADING_4": {
+    "keywords": ["heading 4", "h4", "level 4 heading", "minor subheading"],
+    "action": "add_heading",
+    "params": { "text": "{text}", "level": 4 }
+  },
+  "ADD_TITLE": {
+    "keywords": ["title", "document title", "main title", "set title", "add document title"],
+    "action": "add_heading",
+    "params": { "text": "{text}", "level": 1 }
+  },
+  "ADD_TABLE": {
+    "keywords": ["add table", "insert table", "create table", "new table", "make table", "build table", "generate table", "word table"],
+    "action": "add_table",
+    "params": { "rows": "{rows}", "cols": "{cols}" }
+  },
+  "DELETE_TABLE": {
+    "keywords": ["delete table", "remove table", "erase table", "drop table"],
+    "action": "delete_table",
+    "params": {}
+  },
+  "ADD_TABLE_ROW": {
+    "keywords": ["add row to table", "insert table row", "new row in table", "table new row"],
+    "action": "add_table_row",
+    "params": {}
+  },
+  "ADD_TABLE_COLUMN": {
+    "keywords": ["add column to table", "insert table column", "new column in table"],
+    "action": "add_table_column",
+    "params": {}
+  },
+  "SET_TABLE_STYLE": {
+    "keywords": ["table style", "format table", "table design", "set table style", "apply table style"],
+    "action": "set_table_style",
+    "params": { "style": "{style}" }
+  },
+
+  "FIND_REPLACE": {
+    "keywords": ["find and replace", "replace", "replace text", "find replace", "change word", "swap text", "substitute", "replace word"],
+    "action": "find_replace",
+    "params": { "find_text": "{find_text}", "replace_text": "{replace_text}" }
+  },
+  "FIND_TEXT": {
+    "keywords": ["find", "search", "look for", "find text", "search text", "locate word"],
+    "action": "find_text",
+    "params": { "text": "{text}" }
+  },
+
+  "SET_BOLD": {
+    "keywords": ["bold", "make bold", "embolden", "bolden", "apply bold", "bold text", "bold the"],
+    "action": "set_bold",
+    "params": { "target": "{target}", "bold": true }
+  },
+  "REMOVE_BOLD": {
+    "keywords": ["remove bold", "unbold", "turn off bold", "no bold", "clear bold"],
+    "action": "set_bold",
+    "params": { "target": "{target}", "bold": false }
+  },
+  "SET_ITALIC": {
+    "keywords": ["italic", "italicize", "make italic", "set italic", "apply italic", "slant text"],
+    "action": "set_italic",
+    "params": { "target": "{target}", "italic": true }
+  },
+  "REMOVE_ITALIC": {
+    "keywords": ["remove italic", "unitalicize", "turn off italic", "no italic"],
+    "action": "set_italic",
+    "params": { "target": "{target}", "italic": false }
+  },
+  "SET_UNDERLINE": {
+    "keywords": ["underline", "add underline", "set underline", "apply underline", "underline text"],
+    "action": "set_underline",
+    "params": { "target": "{target}", "underline": true }
+  },
+  "REMOVE_UNDERLINE": {
+    "keywords": ["remove underline", "no underline", "turn off underline", "clear underline"],
+    "action": "set_underline",
+    "params": { "target": "{target}", "underline": false }
+  },
+  "SET_STRIKETHROUGH": {
+    "keywords": ["strikethrough", "strike through", "cross out", "add strikethrough", "strike text"],
+    "action": "set_strikethrough",
+    "params": { "target": "{target}" }
+  },
+  "REMOVE_STRIKETHROUGH": {
+    "keywords": ["remove strikethrough", "undo strikethrough", "clear strikethrough", "no strikethrough"],
+    "action": "remove_strikethrough",
+    "params": { "target": "{target}" }
+  },
+  "SET_SUPERSCRIPT": {
+    "keywords": ["superscript", "super script", "raised text", "exponent text", "above text"],
+    "action": "set_superscript",
+    "params": { "target": "{target}" }
+  },
+  "SET_SUBSCRIPT": {
+    "keywords": ["subscript", "sub script", "lowered text", "below text", "chemical formula text"],
+    "action": "set_subscript",
+    "params": { "target": "{target}" }
+  },
+  "SET_FONT_SIZE": {
+    "keywords": ["font size", "text size", "set size", "change size", "bigger text", "smaller text", "increase font", "decrease font", "size"],
+    "action": "set_font_size",
+    "params": { "target": "{target}", "size": "{size}" }
+  },
+  "SET_FONT_NAME": {
+    "keywords": ["font", "font name", "set font", "change font", "use font", "apply font", "typeface", "font style"],
+    "action": "set_font_name",
+    "params": { "target": "{target}", "name": "{font_name}" }
+  },
+  "SET_FONT_COLOR": {
+    "keywords": ["font color", "text color", "color text", "change text color", "set text color", "color the text", "text colour"],
+    "action": "set_font_color",
+    "params": { "target": "{target}", "color": "{color}" }
+  },
+  "SET_HIGHLIGHT": {
+    "keywords": ["highlight", "add highlight", "apply highlight", "mark text", "highlight text", "color highlight", "marker"],
+    "action": "set_highlight",
+    "params": { "target": "{target}", "color": "{color}" }
+  },
+  "REMOVE_HIGHLIGHT": {
+    "keywords": ["remove highlight", "clear highlight", "no highlight", "undo highlight"],
+    "action": "remove_highlight",
+    "params": { "target": "{target}" }
+  },
+  "CHANGE_CASE_UPPER": {
+    "keywords": ["uppercase", "all caps", "capital letters", "upper case", "make uppercase", "caps"],
+    "action": "change_case",
+    "params": { "target": "{target}", "case": "upper" }
+  },
+  "CHANGE_CASE_LOWER": {
+    "keywords": ["lowercase", "lower case", "small letters", "make lowercase", "no caps"],
+    "action": "change_case",
+    "params": { "target": "{target}", "case": "lower" }
+  },
+  "CHANGE_CASE_TITLE": {
+    "keywords": ["title case", "capitalize", "capitalize first letter", "first letter caps", "proper case"],
+    "action": "change_case",
+    "params": { "target": "{target}", "case": "title" }
+  },
+
+  "SET_ALIGNMENT": {
+    "keywords": ["align", "alignment", "set alignment", "align text", "text alignment"],
+    "action": "set_alignment",
+    "params": { "target": "{target}", "alignment": "{alignment}" }
+  },
+  "ALIGN_CENTER": {
+    "keywords": ["center", "centre", "center text", "align center", "center align", "middle align", "centered"],
+    "action": "set_alignment",
+    "params": { "target": "{target}", "alignment": "center" }
+  },
+  "ALIGN_LEFT": {
+    "keywords": ["left align", "align left", "left justify", "flush left", "left aligned"],
+    "action": "set_alignment",
+    "params": { "target": "{target}", "alignment": "left" }
+  },
+  "ALIGN_RIGHT": {
+    "keywords": ["right align", "align right", "right justify", "flush right", "right aligned"],
+    "action": "set_alignment",
+    "params": { "target": "{target}", "alignment": "right" }
+  },
+  "ALIGN_JUSTIFY": {
+    "keywords": ["justify", "justified", "full justify", "align justify", "both sides", "full width"],
+    "action": "set_alignment",
+    "params": { "target": "{target}", "alignment": "justify" }
+  },
+  "SET_LINE_SPACING": {
+    "keywords": ["line spacing", "spacing", "set spacing", "change spacing", "line height", "double space", "single space", "1.5 spacing", "space between lines"],
+    "action": "set_line_spacing",
+    "params": { "target": "{target}", "spacing": "{spacing}" }
+  },
+  "SET_PARAGRAPH_SPACING": {
+    "keywords": ["paragraph spacing", "space before", "space after", "before paragraph", "after paragraph", "add space between", "paragraph gap"],
+    "action": "set_paragraph_spacing",
+    "params": { "target": "{target}", "before": "{before}", "after": "{after}" }
+  },
+  "SET_INDENT": {
+    "keywords": ["indent", "set indent", "add indent", "paragraph indent", "first line indent", "hanging indent"],
+    "action": "set_indent",
+    "params": { "target": "{target}", "indent": "{indent}" }
+  },
+  "REMOVE_INDENT": {
+    "keywords": ["remove indent", "clear indent", "no indent", "undo indent"],
+    "action": "remove_indent",
+    "params": { "target": "{target}" }
+  },
+
+  "ADD_BULLET_LIST": {
+    "keywords": ["bullet list", "add bullets", "bullet points", "insert bullets", "unordered list", "create list", "list items", "bullet"],
+    "action": "add_bullet_list",
+    "params": { "items": "{items}" }
+  },
+  "ADD_NUMBERED_LIST": {
+    "keywords": ["numbered list", "numbered points", "ordered list", "add numbers", "number list", "enumerated list", "numbered bullets"],
+    "action": "add_numbered_list",
+    "params": { "items": "{items}" }
+  },
+  "CONTINUE_LIST": {
+    "keywords": ["continue list", "add to list", "next list item", "list continue", "append to list"],
+    "action": "continue_list",
+    "params": { "text": "{text}" }
+  },
+  "REMOVE_LIST_FORMAT": {
+    "keywords": ["remove list", "clear list format", "no list", "remove bullets", "remove numbers"],
+    "action": "remove_list_format",
+    "params": { "target": "{target}" }
+  },
+
+  "SET_MARGINS": {
+    "keywords": ["margin", "margins", "set margin", "change margin", "page margin", "top margin", "bottom margin", "left margin", "right margin"],
+    "action": "set_margins",
+    "params": { "top": "{top}", "bottom": "{bottom}", "left": "{left}", "right": "{right}" }
+  },
+  "SET_ORIENTATION": {
+    "keywords": ["orientation", "landscape", "portrait", "page orientation", "set orientation", "rotate page"],
+    "action": "set_orientation",
+    "params": { "orientation": "{orientation}" }
+  },
+  "SET_PAPER_SIZE": {
+    "keywords": ["paper size", "set paper", "a4", "a3", "letter size", "page size", "set page size"],
+    "action": "set_paper_size",
+    "params": { "size": "{size}" }
+  },
+  "INSERT_PAGE_BREAK": {
+    "keywords": ["page break", "insert page break", "new page", "next page", "add page break", "break page", "start new page"],
+    "action": "insert_page_break",
+    "params": {}
+  },
+  "INSERT_SECTION_BREAK": {
+    "keywords": ["section break", "insert section break", "new section", "break section", "add section"],
+    "action": "insert_section_break",
+    "params": {}
+  },
+  "COLUMN_LAYOUT": {
+    "keywords": ["columns", "two columns", "three columns", "multi column", "column layout", "set columns", "newspaper columns"],
+    "action": "set_columns",
+    "params": { "count": "{count}" }
+  },
+
+  "ADD_HEADER": {
+    "keywords": ["header", "page header", "add header", "set header", "document header", "top of page", "running header"],
+    "action": "add_header",
+    "params": { "text": "{text}" }
+  },
+  "ADD_FOOTER": {
+    "keywords": ["footer", "page footer", "add footer", "set footer", "document footer", "bottom of page", "running footer"],
+    "action": "add_footer",
+    "params": { "text": "{text}" }
+  },
+  "ADD_PAGE_NUMBER": {
+    "keywords": ["page number", "add page number", "insert page number", "numbering", "page numbering", "number pages"],
+    "action": "add_page_number",
+    "params": {}
+  },
+  "REMOVE_HEADER": {
+    "keywords": ["remove header", "delete header", "clear header", "no header"],
+    "action": "remove_header",
+    "params": {}
+  },
+  "REMOVE_FOOTER": {
+    "keywords": ["remove footer", "delete footer", "clear footer", "no footer"],
+    "action": "remove_footer",
+    "params": {}
+  },
+
+  "ADD_TABLE_OF_CONTENTS": {
+    "keywords": ["table of contents", "toc", "add toc", "insert toc", "contents page", "generate contents", "contents table"],
+    "action": "add_table_of_contents",
+    "params": {}
+  },
+  "UPDATE_TABLE_OF_CONTENTS": {
+    "keywords": ["update toc", "refresh toc", "update contents", "update table of contents"],
+    "action": "update_table_of_contents",
+    "params": {}
+  },
+  "ADD_FOOTNOTE": {
+    "keywords": ["footnote", "add footnote", "insert footnote", "foot note", "add footnote text"],
+    "action": "add_footnote",
+    "params": { "text": "{text}" }
+  },
+  "ADD_ENDNOTE": {
+    "keywords": ["endnote", "add endnote", "insert endnote", "end note", "back note"],
+    "action": "add_endnote",
+    "params": { "text": "{text}" }
+  },
+  "ADD_COMMENT": {
+    "keywords": ["comment", "add comment", "insert comment", "annotate", "add note", "review comment", "reviewer note"],
+    "action": "add_comment",
+    "params": { "text": "{text}" }
+  },
+  "DELETE_COMMENT": {
+    "keywords": ["delete comment", "remove comment", "clear comments", "accept comment", "dismiss comment"],
+    "action": "delete_comment",
+    "params": {}
+  },
+  "ADD_BOOKMARK": {
+    "keywords": ["bookmark", "add bookmark", "insert bookmark", "mark position", "create bookmark"],
+    "action": "add_bookmark",
+    "params": { "name": "{bookmark_name}" }
+  },
+  "ADD_CROSS_REFERENCE": {
+    "keywords": ["cross reference", "cross-reference", "add reference", "refer to", "link to section"],
+    "action": "add_cross_reference",
+    "params": { "target": "{target}" }
+  },
+
+  "INSERT_IMAGE": {
+    "keywords": ["insert image", "add image", "add picture", "insert picture", "embed image", "place image", "add photo"],
+    "action": "insert_image",
+    "params": { "path": "{image_path}" }
+  },
+  "INSERT_HYPERLINK": {
+    "keywords": ["hyperlink", "insert link", "add link", "create link", "insert hyperlink", "add hyperlink", "url", "web link"],
+    "action": "insert_hyperlink",
+    "params": { "text": "{text}", "url": "{url}" }
+  },
+  "INSERT_HORIZONTAL_LINE": {
+    "keywords": ["horizontal line", "divider", "separator", "insert line", "add line", "draw line", "dividing line"],
+    "action": "insert_horizontal_line",
+    "params": {}
+  },
+  "INSERT_SPECIAL_CHARACTER": {
+    "keywords": ["special character", "insert symbol", "symbol", "add symbol", "special symbol"],
+    "action": "insert_special_character",
+    "params": { "character": "{character}" }
+  },
+  "INSERT_DATE": {
+    "keywords": ["insert date", "add date", "current date", "todays date", "date stamp"],
+    "action": "insert_date",
+    "params": {}
+  },
+  "INSERT_TEXT_BOX": {
+    "keywords": ["text box", "add text box", "insert text box", "floating text", "create text box"],
+    "action": "insert_text_box",
+    "params": { "text": "{text}" }
+  },
+  "INSERT_SHAPE": {
+    "keywords": ["shape", "insert shape", "add shape", "draw shape", "rectangle", "circle", "arrow"],
+    "action": "insert_shape",
+    "params": { "shape_type": "{shape_type}" }
+  },
+  "INSERT_CHART": {
+    "keywords": ["chart", "insert chart", "add chart", "graph", "bar chart", "pie chart", "word chart"],
+    "action": "insert_chart",
+    "params": { "chart_type": "{chart_type}" }
+  },
+
+  "APPLY_STYLE": {
+    "keywords": ["apply style", "set style", "use style", "paragraph style", "text style", "formatting style"],
+    "action": "apply_style",
+    "params": { "target": "{target}", "style": "{style}" }
+  },
+  "CLEAR_FORMATTING": {
+    "keywords": ["clear formatting", "remove formatting", "reset format", "strip format", "plain text", "no formatting"],
+    "action": "clear_formatting",
+    "params": { "target": "{target}" }
+  },
+  "TRACK_CHANGES": {
+    "keywords": ["track changes", "enable track changes", "turn on track changes", "mark changes", "show changes"],
+    "action": "track_changes",
+    "params": { "enabled": true }
+  },
+  "STOP_TRACK_CHANGES": {
+    "keywords": ["stop tracking", "disable track changes", "turn off track changes", "stop marking"],
+    "action": "track_changes",
+    "params": { "enabled": false }
+  },
+  "ACCEPT_CHANGES": {
+    "keywords": ["accept changes", "accept all changes", "apply changes", "confirm changes", "approve changes"],
+    "action": "accept_changes",
+    "params": {}
+  },
+  "REJECT_CHANGES": {
+    "keywords": ["reject changes", "reject all changes", "decline changes", "undo tracked changes"],
+    "action": "reject_changes",
+    "params": {}
+  },
+  "SPELL_CHECK": {
+    "keywords": ["spell check", "check spelling", "spelling", "grammar check", "proofread", "check errors"],
+    "action": "spell_check",
+    "params": {}
+  },
+  "WORD_COUNT": {
+    "keywords": ["word count", "count words", "how many words", "document length", "character count", "page count"],
+    "action": "get_word_count",
+    "params": {}
+  },
+  "PROTECT_DOCUMENT": {
+    "keywords": ["protect document", "lock document", "password protect", "secure document", "restrict editing"],
+    "action": "protect_document",
+    "params": { "password": "{password}" }
+  },
+  "UNPROTECT_DOCUMENT": {
+    "keywords": ["unprotect document", "unlock document", "remove protection", "allow editing", "remove password"],
+    "action": "unprotect_document",
+    "params": { "password": "{password}" }
+  },
+  "MAIL_MERGE": {
+    "keywords": ["mail merge", "merge letters", "merge fields", "personalize letters", "bulk letters"],
+    "action": "start_mail_merge",
+    "params": { "data_source": "{data_source}" }
+  },
+  "COMPARE_DOCUMENTS": {
+    "keywords": ["compare documents", "compare files", "document comparison", "diff documents", "find differences"],
+    "action": "compare_documents",
+    "params": { "path": "{compare_path}" }
+  },
+  "UNDO": {
+    "keywords": ["undo", "revert", "go back", "undo last", "undo action"],
+    "action": "undo",
+    "params": {}
+  },
+  "REDO": {
+    "keywords": ["redo", "redo last", "repeat action"],
+    "action": "redo",
+    "params": {}
+  }
+}

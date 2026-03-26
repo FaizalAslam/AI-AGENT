@@ -1,0 +1,306 @@
+{
+  "excel": {
+    "create a table with 6 rows and 5 columns starting at A1, bold the header row A1:E1, set yellow background on A1:E1, set font size 14 on A1:E1 and autofit columns A to E": [
+      {
+        "action": "create_table",
+        "rows": 6,
+        "cols": 5,
+        "start_cell": "A1"
+      },
+      {
+        "action": "set_bold",
+        "range": "A1:E1",
+        "bold": true
+      },
+      {
+        "action": "set_bg_color",
+        "range": "A1:E1",
+        "color": "yellow"
+      },
+      {
+        "action": "set_font_size",
+        "range": "A1:E1",
+        "size": 14
+      },
+      {
+        "action": "autofit_columns",
+        "range": "A:E"
+      }
+    ],
+    "write Sales in A1, write 1500 in B1, write 2300 in B2, write 1800 in B3, write the sum formula of B1 to B3 in B4 and bold B4": [
+      {
+        "action": "write_cell",
+        "cell": "A1",
+        "value": "Sales"
+      },
+      {
+        "action": "write_cell",
+        "cell": "B1",
+        "value": 1500
+      },
+      {
+        "action": "write_cell",
+        "cell": "B2",
+        "value": 2300
+      },
+      {
+        "action": "write_cell",
+        "cell": "B3",
+        "value": 1800
+      },
+      {
+        "action": "write_formula",
+        "cell": "B4",
+        "formula": "=SUM(B1:B3)"
+      },
+      {
+        "action": "set_bold",
+        "range": "B4",
+        "bold": true
+      }
+    ],
+    "create a new file and write Sales in A1, write 1500 in B1, write 2300 in B2, write 1800 in B3, write the sum formula of B1 to B3 in B4 and bold B4 and set font Arial on range A1:F20, set font size 11 on A1:F20, set thin border on A1:F20, bold A1:F1, set blue background on A1:F1 and set font color white on A1:F1": [
+      {
+        "action": "create_workbook",
+        "params": {}
+      },
+      {
+        "action": "write_cell",
+        "cell": "A1",
+        "value": "Sales"
+      },
+      {
+        "action": "write_cell",
+        "cell": "B1",
+        "value": 1500
+      },
+      {
+        "action": "write_cell",
+        "cell": "B2",
+        "value": 2300
+      },
+      {
+        "action": "write_cell",
+        "cell": "B3",
+        "value": 1800
+      },
+      {
+        "action": "write_formula",
+        "cell": "B4",
+        "formula": "=SUM(B1:B3)"
+      },
+      {
+        "action": "set_bold",
+        "range": "B4",
+        "bold": true
+      },
+      {
+        "action": "set_font_name",
+        "range": "A1:F20",
+        "name": "Arial"
+      },
+      {
+        "action": "set_font_size",
+        "range": "A1:F20",
+        "size": 11
+      },
+      {
+        "action": "set_border",
+        "range": "A1:F20",
+        "style": "thin"
+      },
+      {
+        "action": "set_bold",
+        "range": "A1:F1",
+        "bold": true
+      },
+      {
+        "action": "set_bg_color",
+        "range": "A1:F1",
+        "color": "blue"
+      },
+      {
+        "action": "set_font_color",
+        "range": "A1:F1",
+        "color": "white"
+      }
+    ],
+    "create a new workbook, create a table with 10 rows and 4 columns at A1, write Month in A1, write Revenue in B1, write Expenses in C1, write Profit in D1, bold A1:D1, set yellow background on A1:D1, set font size 12 on A1:D10, set thin border on A1:D10, autofit columns A to D and save the workbook": [
+      {
+        "action": "create_workbook",
+        "params": {}
+      },
+      {
+        "action": "create_table",
+        "rows": 10,
+        "cols": 4,
+        "start_cell": "A1"
+      },
+      {
+        "action": "write_cell",
+        "cell": "A1",
+        "value": "Month"
+      },
+      {
+        "action": "write_cell",
+        "cell": "B1",
+        "value": "Revenue"
+      },
+      {
+        "action": "write_cell",
+        "cell": "C1",
+        "value": "Expenses"
+      },
+      {
+        "action": "write_cell",
+        "cell": "D1",
+        "value": "Profit"
+      },
+      {
+        "action": "set_bold",
+        "range": "A1:D1",
+        "bold": true
+      },
+      {
+        "action": "set_bg_color",
+        "range": "A1:D1",
+        "color": "yellow"
+      },
+      {
+        "action": "set_font_size",
+        "range": "A1:D10",
+        "size": 12
+      },
+      {
+        "action": "set_border",
+        "range": "A1:D10",
+        "style": "thin"
+      },
+      {
+        "action": "autofit_columns",
+        "range": "A:D"
+      },
+      {
+        "action": "save_workbook",
+        "params": {}
+      }
+    ],
+    "Create a new file and name it as\"demo\" and then create a table with 5 rows and 6 columns from the cell B4": [
+      {
+        "action": "create_workbook"
+      }
+    ],
+    "create a file and save it as demo": [
+      {
+        "action": "save_workbook"
+      }
+    ],
+    "save the workbook": [
+      {
+        "action": "save_workbook"
+      }
+    ],
+    "create a table with 4 rows and 5 columns": [
+      {
+        "action": "create_table",
+        "rows": 4,
+        "cols": 5,
+        "start_cell": "A1"
+      }
+    ],
+    "create a table with 5 rows and 4 columns starting at A1": [
+      {
+        "action": "create_table",
+        "rows": 5,
+        "cols": 4,
+        "start_cell": "A1"
+      }
+    ],
+    "create a new workbook": [
+      {
+        "action": "create_workbook"
+      }
+    ],
+    "set yellow background on range A1:E1": [
+      {
+        "action": "write_formula",
+        "cell": "E1",
+        "formula": "=ROUND({cell},{decimals})"
+      }
+    ]
+  },
+  "word": {
+    "add heading Introduction at level 1, add a paragraph with text This is the introduction of the document, set font size 16 for heading 1, set font color blue for heading 1 and set line spacing 1.5 for body and add heading Summary at level 2, add a table with 4 rows and 3 columns, set font Arial for body and set alignment center for heading 2": [
+      {
+        "action": "add_heading",
+        "text": "Introduction",
+        "level": 1
+      },
+      {
+        "action": "add_paragraph",
+        "text": "This is the introduction of the document"
+      },
+      {
+        "action": "set_font_size",
+        "target": "heading_1",
+        "size": 16
+      },
+      {
+        "action": "set_font_color",
+        "target": "heading_1",
+        "color": "blue"
+      },
+      {
+        "action": "set_line_spacing",
+        "target": "body",
+        "spacing": 1.5
+      },
+      {
+        "action": "add_heading",
+        "text": "Summary",
+        "level": 2
+      },
+      {
+        "action": "add_table",
+        "rows": 4,
+        "cols": 3
+      },
+      {
+        "action": "set_font_name",
+        "target": "body",
+        "name": "Arial"
+      },
+      {
+        "action": "set_alignment",
+        "target": "heading_2",
+        "alignment": "center"
+      }
+    ],
+    "bold all heading paragraphs": [
+      {
+        "action": "set_bold",
+        "target": "selection",
+        "bold": true
+      }
+    ],
+    "set alignment center for heading 1": [
+      {
+        "action": "set_alignment",
+        "target": "selection",
+        "alignment": "center"
+      }
+    ],
+    "create a new document": [
+      {
+        "action": "create_document"
+      }
+    ]
+  },
+  "powerpoint": {
+    "create a new presentation": [
+      {
+        "action": "create_presentation"
+      }
+    ]
+  }
+}

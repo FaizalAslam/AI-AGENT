@@ -1,0 +1,4 @@
+00:46:44 - Voice listener started
+00:47:00 - Matched 'CREATE_WORKBOOK' (score=6, kws=['create workbook', 'new workbook']) \u2192 {'action': 'create_workbook'}
+00:47:22 - Matched 'ROUND_FORMULA' (score=2, kws=['round']) \u2192 {'action': 'write_formula', 'cell': 'E1', 'formula': '=ROUND({cell},{decimals})'}
+00:48:33 - Matched 'CREATE_WORKBOOK' (score=6, kws=['create workbook', 'new workbook']) \u2192 {'action': 'create_workbook'}

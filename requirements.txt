@@ -1,0 +1,36 @@
+# Flask server
+flask
+python-dotenv
+
+# OpenAI
+openai
+
+# Office file executors
+openpyxl
+python-docx
+python-pptx
+lxml
+
+# OCR
+easyocr
+pillow
+pyautogui
+
+# PDF
+pypdf
+fpdf2
+pymupdf
+pdf2image
+
+# Speech
+speechrecognition
+pyaudio
+
+# Windows COM (Office automation)
+pywin32
+
+# System
+keyboard
+pyperclip
+plyer
+pynput

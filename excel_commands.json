@@ -1,0 +1,693 @@
+{
+  "CREATE_WORKBOOK": {
+    "keywords": ["create workbook", "new workbook", "new file", "new excel", "open new", "make workbook", "blank workbook"],
+    "action": "create_workbook",
+    "params": {}
+  },
+  "OPEN_WORKBOOK": {
+    "keywords": ["open workbook", "open file", "open excel", "load file", "load workbook", "import file"],
+    "action": "open_workbook",
+    "params": { "path": "{file_path}" }
+  },
+  "SAVE_WORKBOOK": {
+    "keywords": ["save", "save workbook", "save file", "save excel", "save it", "save this", "save document"],
+    "action": "save_workbook",
+    "params": {}
+  },
+  "SAVE_WORKBOOK_AS": {
+    "keywords": ["save as", "save workbook as", "save file as", "save copy", "export as", "rename and save"],
+    "action": "save_workbook_as",
+    "params": { "filename": "{filename}" }
+  },
+  "CLOSE_WORKBOOK": {
+    "keywords": ["close workbook", "close file", "close excel", "exit workbook"],
+    "action": "close_workbook",
+    "params": {}
+  },
+
+  "ADD_SHEET": {
+    "keywords": ["add sheet", "new sheet", "create sheet", "insert sheet", "add tab", "new tab", "add worksheet"],
+    "action": "add_sheet",
+    "params": { "name": "{sheet_name}" }
+  },
+  "SET_ACTIVE_SHEET": {
+    "keywords": ["go to sheet", "switch to sheet", "activate sheet", "select sheet", "navigate to sheet", "open sheet"],
+    "action": "set_active_sheet",
+    "params": { "name": "{sheet_name}" }
+  },
+  "RENAME_SHEET": {
+    "keywords": ["rename sheet", "change sheet name", "name the sheet", "label sheet", "set sheet name"],
+    "action": "rename_sheet",
+    "params": { "old_name": "{old_name}", "new_name": "{new_name}" }
+  },
+  "DELETE_SHEET": {
+    "keywords": ["delete sheet", "remove sheet", "erase sheet", "drop sheet", "remove tab"],
+    "action": "delete_sheet",
+    "params": { "name": "{sheet_name}" }
+  },
+  "DUPLICATE_SHEET": {
+    "keywords": ["duplicate sheet", "copy sheet", "clone sheet", "copy tab"],
+    "action": "duplicate_sheet",
+    "params": { "name": "{sheet_name}" }
+  },
+  "HIDE_SHEET": {
+    "keywords": ["hide sheet", "make sheet invisible", "invisible sheet", "conceal sheet"],
+    "action": "hide_sheet",
+    "params": { "name": "{sheet_name}" }
+  },
+  "UNHIDE_SHEET": {
+    "keywords": ["unhide sheet", "show sheet", "reveal sheet", "make sheet visible"],
+    "action": "unhide_sheet",
+    "params": { "name": "{sheet_name}" }
+  },
+  "MOVE_SHEET": {
+    "keywords": ["move sheet", "reorder sheet", "rearrange sheet", "shift sheet"],
+    "action": "move_sheet",
+    "params": { "name": "{sheet_name}", "position": "{position}" }
+  },
+  "PROTECT_SHEET": {
+    "keywords": ["protect sheet", "lock sheet", "password protect sheet", "secure sheet"],
+    "action": "protect_sheet",
+    "params": { "password": "{password}" }
+  },
+  "UNPROTECT_SHEET": {
+    "keywords": ["unprotect sheet", "unlock sheet", "remove protection", "remove sheet password"],
+    "action": "unprotect_sheet",
+    "params": { "password": "{password}" }
+  },
+  "PROTECT_WORKBOOK": {
+    "keywords": ["protect workbook", "lock workbook", "secure workbook", "password protect workbook"],
+    "action": "protect_workbook",
+    "params": { "password": "{password}" }
+  },
+  "UNPROTECT_WORKBOOK": {
+    "keywords": ["unprotect workbook", "unlock workbook", "remove workbook protection"],
+    "action": "unprotect_workbook",
+    "params": { "password": "{password}" }
+  },
+
+  "WRITE_CELL": {
+    "keywords": ["write", "type", "put", "enter", "set value", "fill in", "input", "insert value", "place", "add value", "write in"],
+    "action": "write_cell",
+    "params": { "cell": "{cell}", "value": "{value}" }
+  },
+  "WRITE_RANGE": {
+    "keywords": ["write range", "fill range", "enter data", "populate", "fill cells", "input data", "insert data", "bulk write"],
+    "action": "write_range",
+    "params": { "start_cell": "{start_cell}", "values": "{values}" }
+  },
+  "READ_CELL": {
+    "keywords": ["read cell", "get value", "what is in", "read value", "show value", "display value", "get cell value"],
+    "action": "read_cell",
+    "params": { "cell": "{cell}" }
+  },
+  "CLEAR_RANGE": {
+    "keywords": ["clear", "delete content", "erase", "remove content", "empty cells", "wipe", "clear cells", "blank out"],
+    "action": "clear_range",
+    "params": { "range": "{range}" }
+  },
+  "CLEAR_ALL": {
+    "keywords": ["clear all", "clear everything", "wipe all", "empty all", "clear entire sheet", "delete all content"],
+    "action": "clear_all",
+    "params": {}
+  },
+  "CLEAR_FORMAT": {
+    "keywords": ["clear format", "remove formatting", "clear formatting", "reset format", "strip format"],
+    "action": "clear_format",
+    "params": { "range": "{range}" }
+  },
+  "COPY_RANGE": {
+    "keywords": ["copy", "copy cells", "copy range", "duplicate range", "copy data", "copy selection"],
+    "action": "copy_range",
+    "params": { "range": "{range}" }
+  },
+  "CUT_RANGE": {
+    "keywords": ["cut", "cut cells", "cut range", "move data", "cut selection"],
+    "action": "cut_range",
+    "params": { "range": "{range}" }
+  },
+  "PASTE_RANGE": {
+    "keywords": ["paste", "paste cells", "paste to", "paste at", "paste data", "paste here"],
+    "action": "paste_range",
+    "params": { "cell": "{target_cell}" }
+  },
+  "PASTE_VALUES_ONLY": {
+    "keywords": ["paste values", "paste only values", "paste without format", "paste special values"],
+    "action": "paste_values_only",
+    "params": { "cell": "{target_cell}" }
+  },
+  "UNDO": {
+    "keywords": ["undo", "revert", "go back", "undo last", "undo action"],
+    "action": "undo",
+    "params": {}
+  },
+  "REDO": {
+    "keywords": ["redo", "redo last", "repeat action", "redo action"],
+    "action": "redo",
+    "params": {}
+  },
+
+  "WRITE_FORMULA": {
+    "keywords": ["formula", "write formula", "insert formula", "apply formula", "calculate using", "enter formula"],
+    "action": "write_formula",
+    "params": { "cell": "{cell}", "formula": "{formula}" }
+  },
+  "SUM_FORMULA": {
+    "keywords": ["sum", "add up", "total", "add numbers", "calculate total", "tally", "sum up", "summation", "add these numbers", "total up"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=SUM({range})" }
+  },
+  "AVERAGE_FORMULA": {
+    "keywords": ["average", "mean", "avg", "calculate average", "find average", "compute mean", "arithmetic mean"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=AVERAGE({range})" }
+  },
+  "COUNT_FORMULA": {
+    "keywords": ["count", "count cells", "how many", "number of", "count values", "count entries", "count numbers"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=COUNT({range})" }
+  },
+  "COUNTA_FORMULA": {
+    "keywords": ["counta", "count non empty", "count filled", "count all entries", "count text", "count non blank"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=COUNTA({range})" }
+  },
+  "COUNTIF_FORMULA": {
+    "keywords": ["countif", "count if", "count matching", "conditional count", "count where", "count cells with"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=COUNTIF({range},{criteria})" }
+  },
+  "SUMIF_FORMULA": {
+    "keywords": ["sumif", "sum if", "conditional sum", "sum where", "sum matching", "sum cells with"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=SUMIF({range},{criteria},{sum_range})" }
+  },
+  "SUMIFS_FORMULA": {
+    "keywords": ["sumifs", "sum with multiple conditions", "sum if multiple", "multi condition sum"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=SUMIFS({sum_range},{range1},{criteria1})" }
+  },
+  "AVERAGEIF_FORMULA": {
+    "keywords": ["averageif", "average if", "conditional average", "average where", "average matching"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=AVERAGEIF({range},{criteria})" }
+  },
+  "MAX_FORMULA": {
+    "keywords": ["maximum", "max", "highest", "largest", "greatest value", "top value", "find max", "biggest"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=MAX({range})" }
+  },
+  "MIN_FORMULA": {
+    "keywords": ["minimum", "min", "lowest", "smallest", "least value", "bottom value", "find min", "tiniest"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=MIN({range})" }
+  },
+  "IF_FORMULA": {
+    "keywords": ["if", "if condition", "if statement", "conditional formula", "if then", "if else", "conditional check"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=IF({condition},{true_val},{false_val})" }
+  },
+  "IFS_FORMULA": {
+    "keywords": ["ifs", "multiple if", "nested if", "multiple conditions", "if ifs", "multi if"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=IFS({cond1},{val1},{cond2},{val2})" }
+  },
+  "VLOOKUP_FORMULA": {
+    "keywords": ["vlookup", "vertical lookup", "lookup", "find value", "search column", "look up value", "search table"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=VLOOKUP({lookup_value},{table_range},{col_index},FALSE)" }
+  },
+  "HLOOKUP_FORMULA": {
+    "keywords": ["hlookup", "horizontal lookup", "lookup row", "find in row", "search row"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=HLOOKUP({lookup_value},{table_range},{row_index},FALSE)" }
+  },
+  "XLOOKUP_FORMULA": {
+    "keywords": ["xlookup", "x lookup", "modern lookup", "advanced lookup", "search and return"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=XLOOKUP({lookup_value},{lookup_array},{return_array})" }
+  },
+  "INDEX_MATCH_FORMULA": {
+    "keywords": ["index match", "index and match", "find and return", "lookup and match"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=INDEX({return_range},MATCH({lookup_value},{lookup_range},0))" }
+  },
+  "CONCATENATE_FORMULA": {
+    "keywords": ["concatenate", "join text", "combine text", "merge text", "join cells", "combine cells", "text join", "link text"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=CONCATENATE({cell1},{cell2})" }
+  },
+  "TEXTJOIN_FORMULA": {
+    "keywords": ["textjoin", "text join", "join with separator", "combine with comma", "join with delimiter"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=TEXTJOIN(\"{delimiter}\",TRUE,{range})" }
+  },
+  "LEFT_FORMULA": {
+    "keywords": ["left", "left text", "extract left", "first characters", "leftmost"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=LEFT({cell},{num_chars})" }
+  },
+  "RIGHT_FORMULA": {
+    "keywords": ["right", "right text", "extract right", "last characters", "rightmost"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=RIGHT({cell},{num_chars})" }
+  },
+  "MID_FORMULA": {
+    "keywords": ["mid", "middle text", "extract middle", "substring", "mid text"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=MID({cell},{start},{num_chars})" }
+  },
+  "LEN_FORMULA": {
+    "keywords": ["length", "text length", "string length", "how long", "count characters", "len"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=LEN({cell})" }
+  },
+  "UPPER_FORMULA": {
+    "keywords": ["uppercase", "upper case", "all caps", "make uppercase", "capitalize all"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=UPPER({cell})" }
+  },
+  "LOWER_FORMULA": {
+    "keywords": ["lowercase", "lower case", "make lowercase", "all lowercase", "small caps"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=LOWER({cell})" }
+  },
+  "PROPER_FORMULA": {
+    "keywords": ["proper case", "title case", "capitalize first", "proper text", "capitalized"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=PROPER({cell})" }
+  },
+  "TRIM_FORMULA": {
+    "keywords": ["trim", "remove spaces", "trim spaces", "clean spaces", "strip spaces", "remove extra spaces"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=TRIM({cell})" }
+  },
+  "ROUND_FORMULA": {
+    "keywords": ["round", "round number", "round off", "round to", "round decimal", "round up", "round down"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=ROUND({cell},{decimals})" }
+  },
+  "ROUNDUP_FORMULA": {
+    "keywords": ["roundup", "round up always", "ceiling round", "round up value"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=ROUNDUP({cell},{decimals})" }
+  },
+  "ROUNDDOWN_FORMULA": {
+    "keywords": ["rounddown", "round down always", "floor round", "round down value"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=ROUNDDOWN({cell},{decimals})" }
+  },
+  "ABS_FORMULA": {
+    "keywords": ["absolute value", "abs", "positive number", "remove negative", "magnitude"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=ABS({cell})" }
+  },
+  "POWER_FORMULA": {
+    "keywords": ["power", "exponent", "raise to power", "squared", "cubed", "to the power of"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=POWER({base},{exponent})" }
+  },
+  "SQRT_FORMULA": {
+    "keywords": ["square root", "sqrt", "root", "calculate root", "find square root"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=SQRT({cell})" }
+  },
+  "TODAY_FORMULA": {
+    "keywords": ["today", "current date", "todays date", "insert date", "now date"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=TODAY()" }
+  },
+  "NOW_FORMULA": {
+    "keywords": ["now", "current time", "current datetime", "insert time", "timestamp"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=NOW()" }
+  },
+  "DATEDIF_FORMULA": {
+    "keywords": ["date difference", "days between", "months between", "years between", "date gap", "datedif"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=DATEDIF({start_date},{end_date},\"{unit}\")" }
+  },
+  "DATE_FORMULA": {
+    "keywords": ["date formula", "create date", "build date", "make date", "set date"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=DATE({year},{month},{day})" }
+  },
+  "YEAR_FORMULA": {
+    "keywords": ["extract year", "get year", "year from date", "year of"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=YEAR({cell})" }
+  },
+  "MONTH_FORMULA": {
+    "keywords": ["extract month", "get month", "month from date", "month of"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=MONTH({cell})" }
+  },
+  "DAY_FORMULA": {
+    "keywords": ["extract day", "get day", "day from date", "day of"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=DAY({cell})" }
+  },
+  "PERCENTAGE_FORMULA": {
+    "keywords": ["percentage", "percent", "calculate percent", "find percentage", "percent of", "ratio percent"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=({part}/{total})*100" }
+  },
+  "RANK_FORMULA": {
+    "keywords": ["rank", "ranking", "find rank", "position in list", "order rank"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=RANK({cell},{range},0)" }
+  },
+  "IFERROR_FORMULA": {
+    "keywords": ["iferror", "if error", "handle error", "error check", "catch error", "on error"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=IFERROR({formula},{error_value})" }
+  },
+  "AND_FORMULA": {
+    "keywords": ["and formula", "all conditions true", "logical and", "both conditions"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=AND({condition1},{condition2})" }
+  },
+  "OR_FORMULA": {
+    "keywords": ["or formula", "any condition true", "logical or", "either condition"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=OR({condition1},{condition2})" }
+  },
+  "NOT_FORMULA": {
+    "keywords": ["not formula", "logical not", "reverse condition", "opposite of"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=NOT({condition})" }
+  },
+  "PMT_FORMULA": {
+    "keywords": ["pmt", "payment", "loan payment", "monthly payment", "calculate payment", "mortgage payment"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=PMT({rate},{nper},{pv})" }
+  },
+  "NPV_FORMULA": {
+    "keywords": ["npv", "net present value", "present value", "investment value"],
+    "action": "write_formula",
+    "params": { "cell": "{result_cell}", "formula": "=NPV({rate},{values})" }
+  },
+
+  "CREATE_TABLE": {
+    "keywords": ["create table", "make table", "insert table", "add table", "new table", "build table", "generate table", "format as table"],
+    "action": "create_table",
+    "params": { "rows": "{rows}", "cols": "{cols}", "start_cell": "{start_cell}" }
+  },
+  "INSERT_ROW": {
+    "keywords": ["insert row", "add row", "new row", "create row", "put row", "add a row"],
+    "action": "insert_row",
+    "params": { "row": "{row_number}" }
+  },
+  "INSERT_COLUMN": {
+    "keywords": ["insert column", "add column", "new column", "create column", "put column", "add a column"],
+    "action": "insert_column",
+    "params": { "column": "{column}" }
+  },
+  "DELETE_ROW": {
+    "keywords": ["delete row", "remove row", "erase row", "drop row", "eliminate row"],
+    "action": "delete_row",
+    "params": { "row": "{row_number}" }
+  },
+  "DELETE_COLUMN": {
+    "keywords": ["delete column", "remove column", "erase column", "drop column", "eliminate column"],
+    "action": "delete_column",
+    "params": { "column": "{column}" }
+  },
+  "HIDE_ROW": {
+    "keywords": ["hide row", "invisible row", "conceal row", "make row hidden"],
+    "action": "hide_row",
+    "params": { "row": "{row_number}" }
+  },
+  "UNHIDE_ROW": {
+    "keywords": ["unhide row", "show row", "reveal row", "make row visible"],
+    "action": "unhide_row",
+    "params": { "row": "{row_number}" }
+  },
+  "HIDE_COLUMN": {
+    "keywords": ["hide column", "invisible column", "conceal column", "make column hidden"],
+    "action": "hide_column",
+    "params": { "column": "{column}" }
+  },
+  "UNHIDE_COLUMN": {
+    "keywords": ["unhide column", "show column", "reveal column", "make column visible"],
+    "action": "unhide_column",
+    "params": { "column": "{column}" }
+  },
+  "SET_ROW_HEIGHT": {
+    "keywords": ["row height", "set row height", "change row height", "resize row", "row size"],
+    "action": "set_row_height",
+    "params": { "row": "{row_number}", "height": "{height}" }
+  },
+  "SET_COLUMN_WIDTH": {
+    "keywords": ["column width", "set column width", "change column width", "resize column", "column size", "widen column", "narrow column"],
+    "action": "set_column_width",
+    "params": { "column": "{column}", "width": "{width}" }
+  },
+  "AUTOFIT_COLUMNS": {
+    "keywords": ["autofit", "auto fit", "fit columns", "resize columns", "auto resize", "fit content", "adjust columns", "best fit"],
+    "action": "autofit_columns",
+    "params": { "range": "{range}" }
+  },
+  "AUTOFIT_ROWS": {
+    "keywords": ["autofit rows", "auto fit rows", "fit rows", "resize rows", "adjust rows"],
+    "action": "autofit_rows",
+    "params": { "range": "{range}" }
+  },
+
+  "SET_BOLD": {
+    "keywords": ["bold", "make bold", "embolden", "bolden", "set bold", "apply bold", "bold text", "bold the"],
+    "action": "set_bold",
+    "params": { "range": "{range}", "bold": true }
+  },
+  "REMOVE_BOLD": {
+    "keywords": ["remove bold", "unbold", "turn off bold", "no bold", "clear bold", "undo bold"],
+    "action": "set_bold",
+    "params": { "range": "{range}", "bold": false }
+  },
+  "SET_ITALIC": {
+    "keywords": ["italic", "italicize", "make italic", "set italic", "apply italic", "slant text"],
+    "action": "set_italic",
+    "params": { "range": "{range}", "italic": true }
+  },
+  "REMOVE_ITALIC": {
+    "keywords": ["remove italic", "unitalicize", "turn off italic", "no italic", "clear italic"],
+    "action": "set_italic",
+    "params": { "range": "{range}", "italic": false }
+  },
+  "SET_UNDERLINE": {
+    "keywords": ["underline", "add underline", "set underline", "apply underline", "underline text"],
+    "action": "set_underline",
+    "params": { "range": "{range}", "underline": true }
+  },
+  "REMOVE_UNDERLINE": {
+    "keywords": ["remove underline", "no underline", "turn off underline", "clear underline"],
+    "action": "set_underline",
+    "params": { "range": "{range}", "underline": false }
+  },
+  "SET_STRIKETHROUGH": {
+    "keywords": ["strikethrough", "strike through", "cross out", "add strikethrough"],
+    "action": "set_strikethrough",
+    "params": { "range": "{range}" }
+  },
+  "SET_FONT_SIZE": {
+    "keywords": ["font size", "text size", "set size", "change size", "increase size", "decrease size", "make text bigger", "make text smaller", "size"],
+    "action": "set_font_size",
+    "params": { "range": "{range}", "size": "{size}" }
+  },
+  "SET_FONT_NAME": {
+    "keywords": ["font", "font name", "set font", "change font", "use font", "apply font", "typeface", "font style"],
+    "action": "set_font_name",
+    "params": { "range": "{range}", "name": "{font_name}" }
+  },
+  "SET_FONT_COLOR": {
+    "keywords": ["font color", "text color", "color text", "change text color", "set text color", "make text color", "text colour"],
+    "action": "set_font_color",
+    "params": { "range": "{range}", "color": "{color}" }
+  },
+  "SET_BG_COLOR": {
+    "keywords": ["background color", "fill color", "highlight", "cell color", "shade", "color cell", "cell background", "set background", "cell fill"],
+    "action": "set_bg_color",
+    "params": { "range": "{range}", "color": "{color}" }
+  },
+  "SET_BORDER": {
+    "keywords": ["border", "add border", "set border", "apply border", "outline", "cell border", "draw border", "borders"],
+    "action": "set_border",
+    "params": { "range": "{range}", "style": "{style}" }
+  },
+  "REMOVE_BORDER": {
+    "keywords": ["remove border", "clear border", "no border", "delete border"],
+    "action": "remove_border",
+    "params": { "range": "{range}" }
+  },
+  "MERGE_CELLS": {
+    "keywords": ["merge", "merge cells", "combine cells", "join cells", "span cells", "merge and center"],
+    "action": "merge_cells",
+    "params": { "range": "{range}" }
+  },
+  "UNMERGE_CELLS": {
+    "keywords": ["unmerge", "unmerge cells", "split cells", "separate cells", "undo merge"],
+    "action": "unmerge_cells",
+    "params": { "range": "{range}" }
+  },
+  "SET_ALIGNMENT": {
+    "keywords": ["align", "alignment", "center align", "left align", "right align", "align text", "set alignment", "text alignment"],
+    "action": "set_alignment",
+    "params": { "range": "{range}", "alignment": "{alignment}" }
+  },
+  "SET_VERTICAL_ALIGNMENT": {
+    "keywords": ["vertical align", "top align", "bottom align", "middle align", "vertical alignment"],
+    "action": "set_vertical_alignment",
+    "params": { "range": "{range}", "alignment": "{alignment}" }
+  },
+  "SET_WRAP_TEXT": {
+    "keywords": ["wrap text", "word wrap", "enable wrap", "wrap", "text wrap", "wrap words"],
+    "action": "set_wrap_text",
+    "params": { "range": "{range}", "wrap": true }
+  },
+  "UNWRAP_TEXT": {
+    "keywords": ["unwrap text", "disable wrap", "no wrap", "remove wrap", "single line"],
+    "action": "set_wrap_text",
+    "params": { "range": "{range}", "wrap": false }
+  },
+  "SET_NUMBER_FORMAT": {
+    "keywords": ["number format", "format number", "format cells", "decimal format", "set format"],
+    "action": "set_number_format",
+    "params": { "range": "{range}", "format": "{format}" }
+  },
+  "FORMAT_CURRENCY": {
+    "keywords": ["currency", "currency format", "money format", "dollar format", "format as currency", "financial format"],
+    "action": "set_number_format",
+    "params": { "range": "{range}", "format": "$#,##0.00" }
+  },
+  "FORMAT_PERCENTAGE": {
+    "keywords": ["percent format", "percentage format", "format as percent", "show percent", "format percentage"],
+    "action": "set_number_format",
+    "params": { "range": "{range}", "format": "0.00%" }
+  },
+  "FORMAT_DATE": {
+    "keywords": ["date format", "format as date", "show date", "format date", "dd/mm/yyyy", "mm/dd/yyyy"],
+    "action": "set_number_format",
+    "params": { "range": "{range}", "format": "{date_format}" }
+  },
+  "FORMAT_TIME": {
+    "keywords": ["time format", "format as time", "show time", "hh:mm", "format time"],
+    "action": "set_number_format",
+    "params": { "range": "{range}", "format": "hh:mm:ss" }
+  },
+
+  "CONDITIONAL_FORMATTING": {
+    "keywords": ["conditional format", "color rules", "highlight rules", "data bars", "color scale", "icon set", "conditional color"],
+    "action": "add_conditional_formatting",
+    "params": { "range": "{range}", "condition": "{condition}", "format": "{format}" }
+  },
+  "DATA_VALIDATION": {
+    "keywords": ["data validation", "input validation", "restrict input", "validate input", "dropdown list", "input rules", "limit input"],
+    "action": "add_data_validation",
+    "params": { "range": "{range}", "type": "{type}", "values": "{values}" }
+  },
+  "NAMED_RANGE": {
+    "keywords": ["named range", "name range", "define range", "set name", "range name", "create named range"],
+    "action": "create_named_range",
+    "params": { "range": "{range}", "name": "{range_name}" }
+  },
+  "FREEZE_PANES": {
+    "keywords": ["freeze", "freeze pane", "freeze row", "freeze column", "lock row", "lock column", "pin row", "pin header", "freeze header"],
+    "action": "freeze_panes",
+    "params": { "cell": "{cell}" }
+  },
+  "UNFREEZE_PANES": {
+    "keywords": ["unfreeze", "unfreeze pane", "unfreeze rows", "unfreeze columns", "unlock pane"],
+    "action": "unfreeze_panes",
+    "params": {}
+  },
+  "SORT_RANGE": {
+    "keywords": ["sort", "sort ascending", "sort descending", "order", "arrange", "sort data", "alphabetical", "a to z", "z to a", "sort column"],
+    "action": "sort_range",
+    "params": { "range": "{range}", "order": "{order}" }
+  },
+  "FILTER_RANGE": {
+    "keywords": ["filter", "auto filter", "add filter", "enable filter", "apply filter", "filter data", "turn on filter"],
+    "action": "filter_range",
+    "params": { "range": "{range}" }
+  },
+  "REMOVE_FILTER": {
+    "keywords": ["remove filter", "clear filter", "disable filter", "turn off filter", "delete filter"],
+    "action": "remove_filter",
+    "params": {}
+  },
+  "FIND_REPLACE": {
+    "keywords": ["find and replace", "replace", "replace text", "find replace", "change value", "swap value", "substitute"],
+    "action": "find_replace",
+    "params": { "find_text": "{find_text}", "replace_text": "{replace_text}" }
+  },
+  "INSERT_COMMENT": {
+    "keywords": ["comment", "add comment", "insert comment", "annotate cell", "note", "cell note", "add note"],
+    "action": "insert_comment",
+    "params": { "cell": "{cell}", "text": "{text}" }
+  },
+  "DELETE_COMMENT": {
+    "keywords": ["delete comment", "remove comment", "clear comment", "erase note", "remove note"],
+    "action": "delete_comment",
+    "params": { "cell": "{cell}" }
+  },
+  "INSERT_HYPERLINK": {
+    "keywords": ["hyperlink", "insert link", "add link", "create link", "url", "web link", "add hyperlink"],
+    "action": "insert_hyperlink",
+    "params": { "cell": "{cell}", "url": "{url}", "text": "{text}" }
+  },
+  "INSERT_CHART": {
+    "keywords": ["chart", "insert chart", "create chart", "make chart", "add chart", "graph", "create graph", "bar chart", "pie chart", "line chart", "column chart"],
+    "action": "insert_chart",
+    "params": { "range": "{range}", "chart_type": "{chart_type}" }
+  },
+  "INSERT_IMAGE": {
+    "keywords": ["insert image", "add image", "add picture", "embed image", "place image", "insert photo"],
+    "action": "insert_image",
+    "params": { "cell": "{cell}", "path": "{image_path}" }
+  },
+  "PIVOT_TABLE": {
+    "keywords": ["pivot table", "create pivot", "insert pivot", "pivot data", "summarize data", "pivot report"],
+    "action": "create_pivot_table",
+    "params": { "source_range": "{source_range}", "dest_cell": "{dest_cell}" }
+  },
+  "GROUP_ROWS": {
+    "keywords": ["group rows", "group", "collapse rows", "row group", "outline rows"],
+    "action": "group_rows",
+    "params": { "start_row": "{start_row}", "end_row": "{end_row}" }
+  },
+  "UNGROUP_ROWS": {
+    "keywords": ["ungroup rows", "ungroup", "expand rows", "remove group", "ungroup outline"],
+    "action": "ungroup_rows",
+    "params": { "start_row": "{start_row}", "end_row": "{end_row}" }
+  },
+  "REMOVE_DUPLICATES": {
+    "keywords": ["remove duplicates", "delete duplicates", "unique values", "no duplicates", "clean data"],
+    "action": "remove_duplicates",
+    "params": { "range": "{range}" }
+  },
+  "TEXT_TO_COLUMNS": {
+    "keywords": ["text to columns", "split columns", "split text", "separate text", "delimiter split"],
+    "action": "text_to_columns",
+    "params": { "range": "{range}", "delimiter": "{delimiter}" }
+  },
+  "ZOOM": {
+    "keywords": ["zoom", "zoom in", "zoom out", "set zoom", "change zoom", "zoom level"],
+    "action": "set_zoom",
+    "params": { "level": "{zoom_level}" }
+  },
+  "PRINT_SETUP": {
+    "keywords": ["print setup", "page setup", "print area", "print orientation", "landscape print", "portrait print"],
+    "action": "set_print_setup",
+    "params": { "orientation": "{orientation}" }
+  },
+  "SET_PRINT_AREA": {
+    "keywords": ["print area", "set print area", "define print area", "print range", "select print area"],
+    "action": "set_print_area",
+    "params": { "range": "{range}" }
+  },
+  "SPELL_CHECK": {
+    "keywords": ["spell check", "check spelling", "spelling", "grammar check", "check errors"],
+    "action": "spell_check",
+    "params": {}
+  }
+}

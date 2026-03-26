@@ -1,0 +1,411 @@
+{
+  "CREATE_PRESENTATION": {
+    "keywords": ["create presentation", "new presentation", "new ppt", "new powerpoint", "new slide deck", "make presentation", "start presentation", "blank presentation"],
+    "action": "create_presentation",
+    "params": {}
+  },
+  "OPEN_PRESENTATION": {
+    "keywords": ["open presentation", "open ppt", "open file", "load presentation", "load ppt", "import presentation"],
+    "action": "open_presentation",
+    "params": { "path": "{file_path}" }
+  },
+  "SAVE_PRESENTATION": {
+    "keywords": ["save", "save presentation", "save ppt", "save file", "save it", "save this"],
+    "action": "save_presentation",
+    "params": {}
+  },
+  "SAVE_PRESENTATION_AS": {
+    "keywords": ["save as", "save presentation as", "save ppt as", "export as", "save copy", "rename and save"],
+    "action": "save_presentation_as",
+    "params": { "filename": "{filename}" }
+  },
+  "CLOSE_PRESENTATION": {
+    "keywords": ["close presentation", "close ppt", "close file", "exit presentation"],
+    "action": "close_presentation",
+    "params": {}
+  },
+  "EXPORT_PDF": {
+    "keywords": ["export pdf", "save as pdf", "convert to pdf", "pdf export", "print to pdf", "export as pdf"],
+    "action": "export_pdf",
+    "params": { "path": "{output_path}" }
+  },
+
+  "ADD_SLIDE": {
+    "keywords": ["add slide", "new slide", "insert slide", "create slide", "next slide", "append slide", "add another slide"],
+    "action": "add_slide",
+    "params": { "layout": "{layout}" }
+  },
+  "DELETE_SLIDE": {
+    "keywords": ["delete slide", "remove slide", "erase slide", "drop slide", "eliminate slide"],
+    "action": "delete_slide",
+    "params": { "slide_index": "{slide_index}" }
+  },
+  "DUPLICATE_SLIDE": {
+    "keywords": ["duplicate slide", "copy slide", "clone slide", "repeat slide", "replicate slide"],
+    "action": "duplicate_slide",
+    "params": { "slide_index": "{slide_index}" }
+  },
+  "REORDER_SLIDE": {
+    "keywords": ["move slide", "reorder slide", "rearrange slide", "shift slide", "reposition slide", "swap slides"],
+    "action": "reorder_slide",
+    "params": { "from_index": "{from_index}", "to_index": "{to_index}" }
+  },
+  "HIDE_SLIDE": {
+    "keywords": ["hide slide", "skip slide", "invisible slide", "ignore slide", "disable slide"],
+    "action": "hide_slide",
+    "params": { "slide_index": "{slide_index}" }
+  },
+  "SHOW_SLIDE": {
+    "keywords": ["show slide", "unhide slide", "reveal slide", "make slide visible", "enable slide"],
+    "action": "show_slide",
+    "params": { "slide_index": "{slide_index}" }
+  },
+  "GO_TO_SLIDE": {
+    "keywords": ["go to slide", "navigate to slide", "jump to slide", "select slide", "switch to slide"],
+    "action": "go_to_slide",
+    "params": { "slide_index": "{slide_index}" }
+  },
+  "CHANGE_LAYOUT": {
+    "keywords": ["layout", "slide layout", "change layout", "set layout", "blank layout", "title layout", "content layout"],
+    "action": "change_layout",
+    "params": { "slide_index": "{slide_index}", "layout": "{layout}" }
+  },
+
+  "SET_TITLE": {
+    "keywords": ["title", "set title", "add title", "write title", "slide title", "main title", "presentation title"],
+    "action": "set_slide_text",
+    "params": { "target": "title", "text": "{text}", "slide_index": "{slide_index}" }
+  },
+  "SET_SUBTITLE": {
+    "keywords": ["subtitle", "set subtitle", "add subtitle", "sub title", "secondary title", "slide subtitle"],
+    "action": "set_slide_text",
+    "params": { "target": "subtitle", "text": "{text}", "slide_index": "{slide_index}" }
+  },
+  "SET_BODY": {
+    "keywords": ["body", "set body", "body text", "content text", "slide content", "slide body", "main content", "body content", "content"],
+    "action": "set_slide_text",
+    "params": { "target": "body", "text": "{text}", "slide_index": "{slide_index}" }
+  },
+  "CLEAR_SLIDE_TEXT": {
+    "keywords": ["clear text", "remove text", "erase text", "blank slide", "clear slide content"],
+    "action": "clear_slide_text",
+    "params": { "target": "{target}", "slide_index": "{slide_index}" }
+  },
+  "ADD_BULLET_POINT": {
+    "keywords": ["bullet", "bullet point", "add bullet", "add point", "list item", "insert bullet", "new point", "add item"],
+    "action": "add_bullet_point",
+    "params": { "target": "body", "text": "{text}", "slide_index": "{slide_index}" }
+  },
+  "ADD_NUMBERED_POINT": {
+    "keywords": ["numbered point", "add number", "numbered bullet", "numbered item", "number point"],
+    "action": "add_numbered_point",
+    "params": { "target": "body", "text": "{text}", "slide_index": "{slide_index}" }
+  },
+  "SET_SPEAKER_NOTES": {
+    "keywords": ["notes", "speaker notes", "presenter notes", "add notes", "write notes", "slide notes", "presentation notes"],
+    "action": "set_speaker_notes",
+    "params": { "slide_index": "{slide_index}", "text": "{text}" }
+  },
+
+  "SET_FONT_SIZE": {
+    "keywords": ["font size", "text size", "set size", "change size", "bigger text", "smaller text", "increase font", "decrease font"],
+    "action": "set_font_size",
+    "params": { "target": "{target}", "slide_index": "{slide_index}", "size": "{size}" }
+  },
+  "SET_FONT_NAME": {
+    "keywords": ["font", "font name", "set font", "change font", "use font", "apply font", "typeface"],
+    "action": "set_font_name",
+    "params": { "target": "{target}", "slide_index": "{slide_index}", "name": "{font_name}" }
+  },
+  "SET_FONT_COLOR": {
+    "keywords": ["font color", "text color", "color text", "change text color", "set text color", "text colour"],
+    "action": "set_font_color",
+    "params": { "target": "{target}", "slide_index": "{slide_index}", "color": "{color}" }
+  },
+  "SET_BOLD": {
+    "keywords": ["bold", "make bold", "embolden", "bolden", "apply bold", "bold text"],
+    "action": "set_bold",
+    "params": { "target": "{target}", "slide_index": "{slide_index}", "bold": true }
+  },
+  "REMOVE_BOLD": {
+    "keywords": ["remove bold", "unbold", "turn off bold", "no bold", "clear bold"],
+    "action": "set_bold",
+    "params": { "target": "{target}", "slide_index": "{slide_index}", "bold": false }
+  },
+  "SET_ITALIC": {
+    "keywords": ["italic", "italicize", "make italic", "set italic", "apply italic"],
+    "action": "set_italic",
+    "params": { "target": "{target}", "slide_index": "{slide_index}", "italic": true }
+  },
+  "REMOVE_ITALIC": {
+    "keywords": ["remove italic", "unitalicize", "turn off italic", "no italic"],
+    "action": "set_italic",
+    "params": { "target": "{target}", "slide_index": "{slide_index}", "italic": false }
+  },
+  "SET_UNDERLINE": {
+    "keywords": ["underline", "add underline", "apply underline", "underline text"],
+    "action": "set_underline",
+    "params": { "target": "{target}", "slide_index": "{slide_index}", "underline": true }
+  },
+  "REMOVE_UNDERLINE": {
+    "keywords": ["remove underline", "no underline", "clear underline"],
+    "action": "set_underline",
+    "params": { "target": "{target}", "slide_index": "{slide_index}", "underline": false }
+  },
+  "SET_STRIKETHROUGH": {
+    "keywords": ["strikethrough", "strike through", "cross out", "strike text"],
+    "action": "set_strikethrough",
+    "params": { "target": "{target}", "slide_index": "{slide_index}" }
+  },
+  "ALIGN_TEXT": {
+    "keywords": ["align text", "text alignment", "center text", "left align text", "right align text", "justify text"],
+    "action": "set_text_alignment",
+    "params": { "target": "{target}", "slide_index": "{slide_index}", "alignment": "{alignment}" }
+  },
+  "SET_LINE_SPACING": {
+    "keywords": ["line spacing", "spacing", "set spacing", "change spacing", "line height", "space between lines"],
+    "action": "set_line_spacing",
+    "params": { "target": "{target}", "slide_index": "{slide_index}", "spacing": "{spacing}" }
+  },
+
+  "SET_BG_COLOR": {
+    "keywords": ["background", "background color", "slide background", "slide color", "set background", "change background", "fill background", "bg color", "slide fill"],
+    "action": "set_bg_color",
+    "params": { "slide_index": "{slide_index}", "color": "{color}" }
+  },
+  "SET_BG_IMAGE": {
+    "keywords": ["background image", "slide background image", "set background image", "wallpaper", "bg image"],
+    "action": "set_bg_image",
+    "params": { "slide_index": "{slide_index}", "path": "{image_path}" }
+  },
+  "SET_BG_GRADIENT": {
+    "keywords": ["gradient background", "gradient", "background gradient", "color gradient", "set gradient"],
+    "action": "set_bg_gradient",
+    "params": { "slide_index": "{slide_index}", "color1": "{color1}", "color2": "{color2}" }
+  },
+  "SET_THEME": {
+    "keywords": ["theme", "set theme", "apply theme", "presentation theme", "slide theme", "change theme", "design theme"],
+    "action": "set_theme",
+    "params": { "theme": "{theme}" }
+  },
+  "SET_COLOR_SCHEME": {
+    "keywords": ["color scheme", "color palette", "set colors", "change colors", "presentation colors"],
+    "action": "set_color_scheme",
+    "params": { "scheme": "{scheme}" }
+  },
+
+  "INSERT_IMAGE": {
+    "keywords": ["insert image", "add image", "add picture", "insert picture", "embed image", "place image", "add photo"],
+    "action": "insert_image",
+    "params": { "slide_index": "{slide_index}", "path": "{image_path}" }
+  },
+  "RESIZE_IMAGE": {
+    "keywords": ["resize image", "scale image", "make image bigger", "make image smaller", "image size"],
+    "action": "resize_image",
+    "params": { "slide_index": "{slide_index}", "width": "{width}", "height": "{height}" }
+  },
+  "INSERT_SHAPE": {
+    "keywords": ["shape", "insert shape", "add shape", "draw shape", "rectangle", "circle", "oval", "arrow", "triangle", "star", "pentagon"],
+    "action": "insert_shape",
+    "params": { "slide_index": "{slide_index}", "shape_type": "{shape_type}" }
+  },
+  "INSERT_TEXT_BOX": {
+    "keywords": ["text box", "add text box", "insert text box", "create text box", "floating text", "free text"],
+    "action": "insert_text_box",
+    "params": { "slide_index": "{slide_index}", "text": "{text}" }
+  },
+  "INSERT_TABLE": {
+    "keywords": ["table", "add table", "insert table", "create table", "slide table", "data table"],
+    "action": "insert_table",
+    "params": { "slide_index": "{slide_index}", "rows": "{rows}", "cols": "{cols}" }
+  },
+  "INSERT_CHART": {
+    "keywords": ["chart", "insert chart", "add chart", "create chart", "graph", "bar chart", "pie chart", "line chart", "column chart", "area chart"],
+    "action": "insert_chart",
+    "params": { "slide_index": "{slide_index}", "chart_type": "{chart_type}" }
+  },
+  "INSERT_VIDEO": {
+    "keywords": ["video", "insert video", "add video", "embed video", "place video", "add movie"],
+    "action": "insert_video",
+    "params": { "slide_index": "{slide_index}", "path": "{video_path}" }
+  },
+  "INSERT_AUDIO": {
+    "keywords": ["audio", "insert audio", "add audio", "add sound", "embed audio", "music", "sound file"],
+    "action": "insert_audio",
+    "params": { "slide_index": "{slide_index}", "path": "{audio_path}" }
+  },
+  "INSERT_ICON": {
+    "keywords": ["icon", "insert icon", "add icon", "symbol icon", "graphic icon"],
+    "action": "insert_icon",
+    "params": { "slide_index": "{slide_index}", "icon_name": "{icon_name}" }
+  },
+  "INSERT_SMARTART": {
+    "keywords": ["smartart", "smart art", "insert diagram", "process diagram", "hierarchy diagram", "flow chart", "org chart"],
+    "action": "insert_smartart",
+    "params": { "slide_index": "{slide_index}", "type": "{type}" }
+  },
+  "INSERT_HYPERLINK": {
+    "keywords": ["hyperlink", "link", "add link", "insert link", "url", "web link", "click link"],
+    "action": "insert_hyperlink",
+    "params": { "slide_index": "{slide_index}", "text": "{text}", "url": "{url}" }
+  },
+
+  "ALIGN_OBJECT_LEFT": {
+    "keywords": ["align left", "object left", "shape left", "move left", "left align object"],
+    "action": "align_object",
+    "params": { "slide_index": "{slide_index}", "alignment": "left" }
+  },
+  "ALIGN_OBJECT_CENTER": {
+    "keywords": ["align center", "center object", "center shape", "center image", "horizontally center"],
+    "action": "align_object",
+    "params": { "slide_index": "{slide_index}", "alignment": "center" }
+  },
+  "ALIGN_OBJECT_RIGHT": {
+    "keywords": ["align right", "object right", "shape right", "move right", "right align object"],
+    "action": "align_object",
+    "params": { "slide_index": "{slide_index}", "alignment": "right" }
+  },
+  "ALIGN_OBJECT_TOP": {
+    "keywords": ["align top", "object top", "move to top", "top align object"],
+    "action": "align_object",
+    "params": { "slide_index": "{slide_index}", "alignment": "top" }
+  },
+  "ALIGN_OBJECT_BOTTOM": {
+    "keywords": ["align bottom", "object bottom", "move to bottom", "bottom align"],
+    "action": "align_object",
+    "params": { "slide_index": "{slide_index}", "alignment": "bottom" }
+  },
+  "ALIGN_OBJECT_MIDDLE": {
+    "keywords": ["align middle", "vertically center", "center vertically", "middle object"],
+    "action": "align_object",
+    "params": { "slide_index": "{slide_index}", "alignment": "middle" }
+  },
+  "GROUP_OBJECTS": {
+    "keywords": ["group", "group objects", "group shapes", "group elements", "combine objects"],
+    "action": "group_objects",
+    "params": { "slide_index": "{slide_index}" }
+  },
+  "UNGROUP_OBJECTS": {
+    "keywords": ["ungroup", "ungroup objects", "ungroup shapes", "separate objects", "split group"],
+    "action": "ungroup_objects",
+    "params": { "slide_index": "{slide_index}" }
+  },
+  "BRING_FORWARD": {
+    "keywords": ["bring forward", "bring to front", "move forward", "front layer", "move to front"],
+    "action": "bring_forward",
+    "params": { "slide_index": "{slide_index}" }
+  },
+  "SEND_BACKWARD": {
+    "keywords": ["send backward", "send to back", "move backward", "back layer", "move to back"],
+    "action": "send_backward",
+    "params": { "slide_index": "{slide_index}" }
+  },
+  "ROTATE_OBJECT": {
+    "keywords": ["rotate", "rotate object", "rotate shape", "rotate image", "turn", "spin"],
+    "action": "rotate_object",
+    "params": { "slide_index": "{slide_index}", "angle": "{angle}" }
+  },
+  "FLIP_OBJECT": {
+    "keywords": ["flip", "flip object", "flip horizontal", "flip vertical", "mirror object"],
+    "action": "flip_object",
+    "params": { "slide_index": "{slide_index}", "direction": "{direction}" }
+  },
+
+  "SET_TRANSITION": {
+    "keywords": ["transition", "slide transition", "add transition", "set transition", "fade", "wipe", "dissolve", "slide effect"],
+    "action": "set_transition",
+    "params": { "slide_index": "{slide_index}", "transition": "{transition_type}" }
+  },
+  "SET_TRANSITION_SPEED": {
+    "keywords": ["transition speed", "transition duration", "slow transition", "fast transition", "transition time"],
+    "action": "set_transition_speed",
+    "params": { "slide_index": "{slide_index}", "speed": "{speed}" }
+  },
+  "REMOVE_TRANSITION": {
+    "keywords": ["remove transition", "no transition", "clear transition", "delete transition"],
+    "action": "remove_transition",
+    "params": { "slide_index": "{slide_index}" }
+  },
+  "APPLY_TRANSITION_ALL": {
+    "keywords": ["apply transition to all", "transition all slides", "same transition all", "all slides transition"],
+    "action": "apply_transition_all",
+    "params": { "transition": "{transition_type}" }
+  },
+  "SET_ANIMATION": {
+    "keywords": ["animate", "animation", "add animation", "entrance animation", "exit animation", "motion", "fly in", "appear", "fade in"],
+    "action": "set_animation",
+    "params": { "slide_index": "{slide_index}", "target": "{target}", "animation": "{animation_type}" }
+  },
+  "SET_ANIMATION_DELAY": {
+    "keywords": ["animation delay", "delay animation", "wait before animation", "animation timing"],
+    "action": "set_animation_delay",
+    "params": { "slide_index": "{slide_index}", "delay": "{delay}" }
+  },
+  "REMOVE_ANIMATION": {
+    "keywords": ["remove animation", "no animation", "clear animation", "delete animation"],
+    "action": "remove_animation",
+    "params": { "slide_index": "{slide_index}", "target": "{target}" }
+  },
+  "AUTO_ADVANCE": {
+    "keywords": ["auto advance", "auto play", "automatic slide", "timed slide", "advance after", "set timing"],
+    "action": "set_auto_advance",
+    "params": { "slide_index": "{slide_index}", "seconds": "{seconds}" }
+  },
+
+  "SLIDE_NUMBER": {
+    "keywords": ["slide number", "add slide number", "insert slide number", "page number", "slide numbering", "number slides"],
+    "action": "add_slide_number",
+    "params": {}
+  },
+  "SET_HEADER_FOOTER": {
+    "keywords": ["header", "footer", "slide header", "slide footer", "add header", "add footer", "date on slide"],
+    "action": "set_header_footer",
+    "params": { "header": "{header_text}", "footer": "{footer_text}" }
+  },
+  "SET_SLIDE_SIZE": {
+    "keywords": ["slide size", "set size", "widescreen", "standard", "change slide size", "presentation size", "16:9", "4:3"],
+    "action": "set_slide_size",
+    "params": { "width": "{width}", "height": "{height}" }
+  },
+  "SLIDE_MASTER": {
+    "keywords": ["slide master", "master slide", "edit master", "master layout", "presentation master"],
+    "action": "edit_slide_master",
+    "params": {}
+  },
+  "ADD_LOGO": {
+    "keywords": ["logo", "add logo", "company logo", "insert logo", "brand logo", "logo on all slides"],
+    "action": "add_logo",
+    "params": { "path": "{image_path}" }
+  },
+
+  "START_SLIDESHOW": {
+    "keywords": ["start slideshow", "play slideshow", "present", "begin presentation", "run slideshow", "start presentation", "show presentation", "present now"],
+    "action": "start_slideshow",
+    "params": {}
+  },
+  "END_SLIDESHOW": {
+    "keywords": ["end slideshow", "stop presentation", "exit slideshow", "stop slide show"],
+    "action": "end_slideshow",
+    "params": {}
+  },
+  "PRINT_HANDOUTS": {
+    "keywords": ["print handouts", "handouts", "print notes", "audience handout", "print slides"],
+    "action": "print_handouts",
+    "params": {}
+  },
+  "SPELL_CHECK": {
+    "keywords": ["spell check", "check spelling", "spelling", "proofread", "check errors"],
+    "action": "spell_check",
+    "params": {}
+  },
+  "UNDO": {
+    "keywords": ["undo", "revert", "go back", "undo last"],
+    "action": "undo",
+    "params": {}
+  },
+  "REDO": {
+    "keywords": ["redo", "redo last", "repeat action"],
+    "action": "redo",
+    "params": {}
+  }
+}

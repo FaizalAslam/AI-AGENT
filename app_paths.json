@@ -1,0 +1,788 @@
+{
+  "uri_apps": {
+    "camera":                "microsoft.windows.camera:",
+    "windows camera":        "microsoft.windows.camera:",
+    "settings":              "ms-settings:",
+    "windows settings":      "ms-settings:",
+    "system settings":       "ms-settings:",
+    "alarms":                "ms-clock:",
+    "clock":                 "ms-clock:",
+    "alarm":                 "ms-clock:",
+    "calendar":              "outlookcal:",
+    "mail":                  "outlookmail:",
+    "maps":                  "bingmaps:",
+    "photos":                "ms-photos:",
+    "store":                 "ms-windows-store:",
+    "microsoft store":       "ms-windows-store:",
+    "xbox":                  "xbox:",
+    "feedback":              "feedback-hub:",
+    "feedback hub":          "feedback-hub:",
+    "paint 3d":              "ms-paint:",
+    "3d viewer":             "ms-3dviewer:",
+    "groove music":          "mswindowsmusic:",
+    "movies & tv":           "mswindowsvideo:",
+    "movies and tv":         "mswindowsvideo:",
+    "voice recorder":        "ms-callrecorder:",
+    "your phone":            "ms-yourphone:",
+    "link to windows":       "ms-yourphone:",
+    "snipping tool":         "ms-screenclip:",
+    "snip":                  "ms-screenclip:",
+    "weather":               "bingweather:",
+    "news":                  "bingnews:",
+    "sticky notes":          "ms-stickynotes:",
+    "sticky note":           "ms-stickynotes:",
+    "phone":                 "ms-phone:",
+    "get help":              "ms-contact-support:",
+    "whiteboard":            "ms-whiteboard:",
+    "microsoft whiteboard":  "ms-whiteboard:",
+    "to do":                 "ms-todo:",
+    "microsoft to do":       "ms-todo:",
+    "todo":                  "ms-todo:",
+    "people":                "ms-people:",
+    "contacts":              "ms-people:",
+    "cortana":               "ms-cortana:",
+    "tips":                  "ms-get-started:",
+    "game bar":              "ms-gamebar:",
+    "xbox game bar":         "ms-gamebar:",
+    "screen recorder":       "ms-gamebar:",
+    "print 3d":              "ms-print3d:",
+    "mixed reality":         "ms-holographicfirstrun:",
+    "region settings":       "ms-settings:regionformatting",
+    "bluetooth settings":    "ms-settings:bluetooth",
+    "wifi settings":         "ms-settings:network-wifi",
+    "display settings":      "ms-settings:display",
+    "sound settings":        "ms-settings:sound",
+    "privacy settings":      "ms-settings:privacy",
+    "update settings":       "ms-settings:windowsupdate",
+    "apps settings":         "ms-settings:appsfeatures",
+    "storage settings":      "ms-settings:storagesense",
+    "power settings":        "ms-settings:powersleep",
+    "account settings":      "ms-settings:yourinfo",
+    "language settings":     "ms-settings:regionlanguage",
+    "date time settings":    "ms-settings:dateandtime",
+    "mouse settings":        "ms-settings:mousetouchpad",
+    "keyboard settings":     "ms-settings:keyboard",
+    "notification settings": "ms-settings:notifications",
+    "taskbar settings":      "ms-settings:taskbar",
+    "theme settings":        "ms-settings:themes",
+    "lock screen settings":  "ms-settings:lockscreen"
+  },
+
+  "basic_apps": {
+    "chrome": {
+      "windows": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "macos":   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+    },
+    "google chrome": {
+      "windows": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "macos":   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+    },
+    "firefox": {
+      "windows": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "macos":   "/Applications/Firefox.app/Contents/MacOS/firefox"
+    },
+    "mozilla firefox": {
+      "windows": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "macos":   "/Applications/Firefox.app/Contents/MacOS/firefox"
+    },
+    "edge": {
+      "windows": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+      "macos":   "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge"
+    },
+    "microsoft edge": {
+      "windows": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+      "macos":   "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge"
+    },
+    "notepad": {
+      "windows": "notepad.exe",
+      "macos":   "/Applications/TextEdit.app/Contents/MacOS/TextEdit"
+    },
+    "textedit": {
+      "windows": null,
+      "macos":   "/Applications/TextEdit.app/Contents/MacOS/TextEdit"
+    },
+    "calculator": {
+      "windows": "calc.exe",
+      "macos":   "/Applications/Calculator.app/Contents/MacOS/Calculator"
+    },
+    "calc": {
+      "windows": "calc.exe",
+      "macos":   "/Applications/Calculator.app/Contents/MacOS/Calculator"
+    },
+    "paint": {
+      "windows": "mspaint.exe",
+      "macos":   "/Applications/Preview.app/Contents/MacOS/Preview"
+    },
+    "mspaint": {
+      "windows": "mspaint.exe",
+      "macos":   null
+    },
+    "cmd": {
+      "windows": "cmd.exe",
+      "macos":   "/Applications/Utilities/Terminal.app/Contents/MacOS/Terminal"
+    },
+    "command prompt": {
+      "windows": "cmd.exe",
+      "macos":   null
+    },
+    "terminal": {
+      "windows": "cmd.exe",
+      "macos":   "/Applications/Utilities/Terminal.app/Contents/MacOS/Terminal"
+    },
+    "powershell": {
+      "windows": "powershell.exe",
+      "macos":   null
+    },
+    "windows powershell": {
+      "windows": "powershell.exe",
+      "macos":   null
+    },
+    "explorer": {
+      "windows": "explorer.exe",
+      "macos":   "/Applications/Finder.app/Contents/MacOS/Finder"
+    },
+    "file explorer": {
+      "windows": "explorer.exe",
+      "macos":   null
+    },
+    "finder": {
+      "windows": null,
+      "macos":   "/Applications/Finder.app/Contents/MacOS/Finder"
+    },
+    "task manager": {
+      "windows": "taskmgr.exe",
+      "macos":   "/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor"
+    },
+    "taskmgr": {
+      "windows": "taskmgr.exe",
+      "macos":   null
+    },
+    "activity monitor": {
+      "windows": null,
+      "macos":   "/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor"
+    },
+    "registry": {
+      "windows": "regedit.exe",
+      "macos":   null
+    },
+    "regedit": {
+      "windows": "regedit.exe",
+      "macos":   null
+    },
+    "registry editor": {
+      "windows": "regedit.exe",
+      "macos":   null
+    },
+    "control panel": {
+      "windows": "control.exe",
+      "macos":   null
+    },
+    "disk management": {
+      "windows": "diskmgmt.msc",
+      "macos":   null
+    },
+    "device manager": {
+      "windows": "devmgmt.msc",
+      "macos":   null
+    },
+    "services": {
+      "windows": "services.msc",
+      "macos":   null
+    },
+    "event viewer": {
+      "windows": "eventvwr.msc",
+      "macos":   null
+    },
+    "msconfig": {
+      "windows": "msconfig.exe",
+      "macos":   null
+    },
+    "system configuration": {
+      "windows": "msconfig.exe",
+      "macos":   null
+    },
+    "run": {
+      "windows": "explorer.exe shell:::{2559a1f3-21d7-11d4-bdaf-00c04f60b9f0}",
+      "macos":   null
+    },
+    "safari": {
+      "windows": null,
+      "macos":   "/Applications/Safari.app/Contents/MacOS/Safari"
+    },
+    "pages": {
+      "windows": null,
+      "macos":   "/Applications/Pages.app/Contents/MacOS/Pages"
+    },
+    "keynote": {
+      "windows": null,
+      "macos":   "/Applications/Keynote.app/Contents/MacOS/Keynote"
+    },
+    "numbers": {
+      "windows": null,
+      "macos":   "/Applications/Numbers.app/Contents/MacOS/Numbers"
+    },
+    "xcode": {
+      "windows": null,
+      "macos":   "/Applications/Xcode.app/Contents/MacOS/Xcode"
+    },
+    "garageband": {
+      "windows": null,
+      "macos":   "/Applications/GarageBand.app/Contents/MacOS/GarageBand"
+    },
+    "imovie": {
+      "windows": null,
+      "macos":   "/Applications/iMovie.app/Contents/MacOS/iMovie"
+    },
+    "itunes": {
+      "windows": null,
+      "macos":   "/Applications/iTunes.app/Contents/MacOS/iTunes"
+    },
+    "music": {
+      "windows": null,
+      "macos":   "/Applications/Music.app/Contents/MacOS/Music"
+    },
+    "excel": {
+      "windows": "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE",
+      "macos":   "/Applications/Microsoft Excel.app/Contents/MacOS/Microsoft Excel"
+    },
+    "microsoft excel": {
+      "windows": "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE",
+      "macos":   "/Applications/Microsoft Excel.app/Contents/MacOS/Microsoft Excel"
+    },
+    "word": {
+      "windows": "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE",
+      "macos":   "/Applications/Microsoft Word.app/Contents/MacOS/Microsoft Word"
+    },
+    "microsoft word": {
+      "windows": "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE",
+      "macos":   "/Applications/Microsoft Word.app/Contents/MacOS/Microsoft Word"
+    },
+    "powerpoint": {
+      "windows": "C:\\Program Files\\Microsoft Office\\root\\Office16\\POWERPNT.EXE",
+      "macos":   "/Applications/Microsoft PowerPoint.app/Contents/MacOS/Microsoft PowerPoint"
+    },
+    "microsoft powerpoint": {
+      "windows": "C:\\Program Files\\Microsoft Office\\root\\Office16\\POWERPNT.EXE",
+      "macos":   "/Applications/Microsoft PowerPoint.app/Contents/MacOS/Microsoft PowerPoint"
+    },
+    "ppt": {
+      "windows": "C:\\Program Files\\Microsoft Office\\root\\Office16\\POWERPNT.EXE",
+      "macos":   "/Applications/Microsoft PowerPoint.app/Contents/MacOS/Microsoft PowerPoint"
+    },
+    "outlook": {
+      "windows": "C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE",
+      "macos":   "/Applications/Microsoft Outlook.app/Contents/MacOS/Microsoft Outlook"
+    },
+    "microsoft outlook": {
+      "windows": "C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE",
+      "macos":   "/Applications/Microsoft Outlook.app/Contents/MacOS/Microsoft Outlook"
+    },
+    "onenote": {
+      "windows": "C:\\Program Files\\Microsoft Office\\root\\Office16\\ONENOTE.EXE",
+      "macos":   "/Applications/Microsoft OneNote.app/Contents/MacOS/Microsoft OneNote"
+    },
+    "access": {
+      "windows": "C:\\Program Files\\Microsoft Office\\root\\Office16\\MSACCESS.EXE",
+      "macos":   null
+    },
+    "publisher": {
+      "windows": "C:\\Program Files\\Microsoft Office\\root\\Office16\\MSPUB.EXE",
+      "macos":   null
+    },
+    "visio": {
+      "windows": "C:\\Program Files\\Microsoft Office\\root\\Office16\\VISIO.EXE",
+      "macos":   null
+    },
+    "wordpad": {
+      "windows": "wordpad.exe",
+      "macos":   null
+    },
+    "snipping tool exe": {
+      "windows": "SnippingTool.exe",
+      "macos":   null
+    },
+    "magnifier": {
+      "windows": "magnify.exe",
+      "macos":   null
+    },
+    "narrator": {
+      "windows": "narrator.exe",
+      "macos":   null
+    },
+    "on screen keyboard": {
+      "windows": "osk.exe",
+      "macos":   null
+    },
+    "character map": {
+      "windows": "charmap.exe",
+      "macos":   null
+    },
+    "remote desktop": {
+      "windows": "mstsc.exe",
+      "macos":   null
+    },
+    "mstsc": {
+      "windows": "mstsc.exe",
+      "macos":   null
+    }
+  },
+
+  "app_aliases": {
+    "ms word":                   "word",
+    "microsoft word":            "word",
+    "ms excel":                  "excel",
+    "microsoft excel":           "excel",
+    "power point":               "powerpoint",
+    "microsoft powerpoint":      "powerpoint",
+    "ms powerpoint":             "powerpoint",
+    "file explorer":             "explorer",
+    "windows explorer":          "explorer",
+    "file manager":              "explorer",
+    "command prompt":            "cmd",
+    "visual studio code":        "vscode",
+    "vs code":                   "vscode",
+    "microsoft edge":            "edge",
+    "ms edge":                   "edge",
+    "mspaint":                   "paint",
+    "microsoft paint":           "paint",
+    "snippingtool":              "snipping tool",
+    "snip and sketch":           "snipping tool",
+    "snipping":                  "snipping tool",
+    "pptx":                      "powerpoint",
+    "whats app":                 "whatsapp",
+    "what's app":                "whatsapp",
+    "windows camera":            "camera",
+    "windows settings":          "settings",
+    "system settings":           "settings",
+    "alarm":                     "alarms",
+    "sticky note":               "sticky notes",
+    "notepad plus":              "notepad++",
+    "notepad plus plus":         "notepad++",
+    "task mgr":                  "task manager",
+    "vs":                        "vscode",
+    "chrome browser":            "chrome",
+    "google chrome":             "chrome",
+    "mozilla firefox":           "firefox",
+    "mozilla":                   "firefox",
+    "windows terminal":          "terminal",
+    "powershell":                "powershell",
+    "ps":                        "powershell",
+    "windows powershell":        "powershell",
+    "regedit":                   "registry",
+    "registry editor":           "registry",
+    "discord app":               "discord",
+    "zoom app":                  "zoom",
+    "zoom meeting":              "zoom",
+    "ms teams":                  "teams",
+    "microsoft teams":           "teams",
+    "slack app":                 "slack",
+    "spotify app":               "spotify",
+    "netflix app":               "netflix",
+    "vlc media player":          "vlc",
+    "media player":              "vlc",
+    "notepad++ editor":          "notepad++",
+    "sublime":                   "sublime text",
+    "sublime text editor":       "sublime text",
+    "postman app":               "postman",
+    "android studio ide":        "android studio",
+    "intellij":                  "intellij idea",
+    "pycharm ide":               "pycharm",
+    "activity monitor":          "task manager",
+    "system monitor":            "task manager",
+    "word processor":            "word",
+    "spreadsheet":               "excel",
+    "presentation":              "powerpoint",
+    "remote desktop":            "remote desktop",
+    "rdp":                       "remote desktop",
+    "text editor":               "notepad",
+    "browser":                   "chrome",
+    "internet":                  "chrome",
+    "email":                     "outlook",
+    "emails":                    "outlook"
+  },
+
+  "direct_executables": {
+    "chrome":           "chrome",
+    "firefox":          "firefox",
+    "edge":             "msedge",
+    "notepad":          "notepad",
+    "calculator":       "calc",
+    "calc":             "calc",
+    "paint":            "mspaint",
+    "cmd":              "cmd",
+    "terminal":         "cmd",
+    "powershell":       "powershell",
+    "explorer":         "explorer",
+    "spotify":          "spotify",
+    "slack":            "slack",
+    "teams":            "ms-teams",
+    "discord":          "discord",
+    "zoom":             "zoom",
+    "vlc":              "vlc",
+    "notepad++":        "notepad++",
+    "vscode":           "code",
+    "word":             "winword",
+    "excel":            "excel",
+    "powerpoint":       "powerpnt",
+    "ppt":              "powerpnt",
+    "outlook":          "outlook",
+    "onenote":          "onenote",
+    "access":           "msaccess",
+    "skype":            "skype",
+    "telegram":         "telegram",
+    "sublime text":     "sublime_text",
+    "postman":          "postman",
+    "git":              "git",
+    "github desktop":   "github",
+    "obs":              "obs64",
+    "obs studio":       "obs64",
+    "7zip":             "7zFM",
+    "7-zip":            "7zFM",
+    "winrar":           "winrar",
+    "task manager":     "taskmgr",
+    "taskmgr":          "taskmgr",
+    "regedit":          "regedit",
+    "wordpad":          "wordpad",
+    "remote desktop":   "mstsc"
+  },
+
+  "candidate_paths": {
+    "spotify": [
+      "%APPDATA%\\Spotify\\Spotify.exe",
+      "%LOCALAPPDATA%\\Microsoft\\WindowsApps\\Spotify.exe"
+    ],
+    "discord": [
+      "%LOCALAPPDATA%\\Discord\\Update.exe",
+      "%LOCALAPPDATA%\\Discord\\app-1.0.9035\\Discord.exe",
+      "%LOCALAPPDATA%\\Discord\\app-1.0.9034\\Discord.exe"
+    ],
+    "teams": [
+      "%LOCALAPPDATA%\\Microsoft\\WindowsApps\\ms-teams.exe",
+      "%LOCALAPPDATA%\\Microsoft\\Teams\\current\\Teams.exe",
+      "%PROGRAMFILES%\\WindowsApps\\MSTeams_25011.1501.3161.3246_x64__8wekyb3d8bbwe\\ms-teams.exe"
+    ],
+    "zoom": [
+      "%APPDATA%\\Zoom\\bin\\Zoom.exe",
+      "%PROGRAMFILES%\\Zoom\\bin\\Zoom.exe",
+      "%LOCALAPPDATA%\\Zoom\\bin\\Zoom.exe"
+    ],
+    "slack": [
+      "%LOCALAPPDATA%\\slack\\slack.exe",
+      "%APPDATA%\\Slack\\slack.exe"
+    ],
+    "whatsapp": [
+      "%LOCALAPPDATA%\\WhatsApp\\WhatsApp.exe",
+      "%APPDATA%\\WhatsApp\\WhatsApp.exe",
+      "%LOCALAPPDATA%\\Microsoft\\WindowsApps\\WhatsApp.exe",
+      "%PROGRAMFILES%\\WindowsApps\\5319275A.WhatsAppDesktop_2.2402.4.0_x64__cv1g1gvanyjgm\\WhatsApp.exe"
+    ],
+    "vscode": [
+      "%LOCALAPPDATA%\\Programs\\Microsoft VS Code\\Code.exe",
+      "%PROGRAMFILES%\\Microsoft VS Code\\Code.exe"
+    ],
+    "vlc": [
+      "C:\\Program Files\\VideoLAN\\VLC\\vlc.exe",
+      "C:\\Program Files (x86)\\VideoLAN\\VLC\\vlc.exe"
+    ],
+    "notepad++": [
+      "C:\\Program Files\\Notepad++\\notepad++.exe",
+      "C:\\Program Files (x86)\\Notepad++\\notepad++.exe"
+    ],
+    "netflix": [
+      "%LOCALAPPDATA%\\Microsoft\\WindowsApps\\Netflix.exe"
+    ],
+    "telegram": [
+      "%APPDATA%\\Telegram Desktop\\Telegram.exe",
+      "%LOCALAPPDATA%\\Telegram Desktop\\Telegram.exe"
+    ],
+    "skype": [
+      "%APPDATA%\\Microsoft\\Teams\\current\\Skype.exe",
+      "%PROGRAMFILES%\\Microsoft\\Skype for Desktop\\Skype.exe",
+      "%LOCALAPPDATA%\\Microsoft\\WindowsApps\\skype.exe"
+    ],
+    "obs": [
+      "C:\\Program Files\\obs-studio\\bin\\64bit\\obs64.exe",
+      "C:\\Program Files (x86)\\obs-studio\\bin\\64bit\\obs64.exe"
+    ],
+    "obs studio": [
+      "C:\\Program Files\\obs-studio\\bin\\64bit\\obs64.exe"
+    ],
+    "sublime text": [
+      "C:\\Program Files\\Sublime Text\\sublime_text.exe",
+      "C:\\Program Files (x86)\\Sublime Text 3\\sublime_text.exe"
+    ],
+    "postman": [
+      "%LOCALAPPDATA%\\Postman\\Postman.exe",
+      "%APPDATA%\\Postman\\Postman.exe"
+    ],
+    "github desktop": [
+      "%LOCALAPPDATA%\\GitHubDesktop\\GitHubDesktop.exe",
+      "%APPDATA%\\GitHub Desktop\\GitHubDesktop.exe"
+    ],
+    "android studio": [
+      "C:\\Program Files\\Android\\Android Studio\\bin\\studio64.exe",
+      "C:\\Program Files\\Android\\Android Studio\\bin\\studio.exe"
+    ],
+    "pycharm": [
+      "C:\\Program Files\\JetBrains\\PyCharm Community Edition 2025.2.2\\bin\\pycharm64.exe",
+      "C:\\Program Files\\JetBrains\\PyCharm 2025.2.2\\bin\\pycharm64.exe",
+      "%LOCALAPPDATA%\\Programs\\PyCharm Community Edition\\bin\\pycharm64.exe"
+    ],
+    "intellij idea": [
+      "C:\\Program Files\\JetBrains\\IntelliJ IDEA Community Edition 2025.2.2\\bin\\idea64.exe",
+      "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.2.2\\bin\\idea64.exe"
+    ],
+    "7zip": [
+      "C:\\Program Files\\7-Zip\\7zFM.exe",
+      "C:\\Program Files (x86)\\7-Zip\\7zFM.exe"
+    ],
+    "7-zip": [
+      "C:\\Program Files\\7-Zip\\7zFM.exe",
+      "C:\\Program Files (x86)\\7-Zip\\7zFM.exe"
+    ],
+    "winrar": [
+      "C:\\Program Files\\WinRAR\\WinRAR.exe",
+      "C:\\Program Files (x86)\\WinRAR\\WinRAR.exe"
+    ],
+    "winzip": [
+      "C:\\Program Files\\WinZip\\winzip64.exe",
+      "C:\\Program Files (x86)\\WinZip\\winzip32.exe"
+    ],
+    "steam": [
+      "C:\\Program Files (x86)\\Steam\\steam.exe",
+      "C:\\Program Files\\Steam\\steam.exe"
+    ],
+    "epic games": [
+      "C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win32\\EpicGamesLauncher.exe",
+      "C:\\Program Files\\Epic Games\\Launcher\\Portal\\Binaries\\Win64\\EpicGamesLauncher.exe"
+    ],
+    "origin": [
+      "C:\\Program Files (x86)\\Origin\\Origin.exe"
+    ],
+    "battle.net": [
+      "C:\\Program Files (x86)\\Battle.net\\Battle.net.exe",
+      "C:\\Program Files\\Battle.net\\Battle.net.exe"
+    ],
+    "ubisoft connect": [
+      "C:\\Program Files (x86)\\Ubisoft\\Ubisoft Game Launcher\\UbisoftConnect.exe"
+    ],
+    "adobe reader": [
+      "C:\\Program Files\\Adobe\\Acrobat DC\\Acrobat\\Acrobat.exe",
+      "C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroRd32.exe"
+    ],
+    "acrobat": [
+      "C:\\Program Files\\Adobe\\Acrobat DC\\Acrobat\\Acrobat.exe"
+    ],
+    "photoshop": [
+      "C:\\Program Files\\Adobe\\Adobe Photoshop 2025\\Photoshop.exe",
+      "C:\\Program Files\\Adobe\\Adobe Photoshop 2024\\Photoshop.exe"
+    ],
+    "illustrator": [
+      "C:\\Program Files\\Adobe\\Adobe Illustrator 2025\\Support Files\\Contents\\Windows\\Illustrator.exe"
+    ],
+    "premiere": [
+      "C:\\Program Files\\Adobe\\Adobe Premiere Pro 2025\\Adobe Premiere Pro.exe"
+    ],
+    "after effects": [
+      "C:\\Program Files\\Adobe\\Adobe After Effects 2025\\Support Files\\AfterFX.exe"
+    ],
+    "audacity": [
+      "C:\\Program Files\\Audacity\\Audacity.exe",
+      "C:\\Program Files (x86)\\Audacity\\Audacity.exe"
+    ],
+    "itunes": [
+      "C:\\Program Files\\iTunes\\iTunes.exe",
+      "C:\\Program Files (x86)\\iTunes\\iTunes.exe"
+    ],
+    "winamp": [
+      "C:\\Program Files\\Winamp\\winamp.exe",
+      "C:\\Program Files (x86)\\Winamp\\winamp.exe"
+    ],
+    "putty": [
+      "C:\\Program Files\\PuTTY\\putty.exe",
+      "C:\\Program Files (x86)\\PuTTY\\putty.exe"
+    ],
+    "winscp": [
+      "C:\\Program Files\\WinSCP\\WinSCP.exe"
+    ],
+    "filezilla": [
+      "C:\\Program Files\\FileZilla FTP Client\\filezilla.exe",
+      "C:\\Program Files (x86)\\FileZilla FTP Client\\filezilla.exe"
+    ],
+    "mysql workbench": [
+      "C:\\Program Files\\MySQL\\MySQL Workbench 8.0\\MySQLWorkbench.exe"
+    ],
+    "dbeaver": [
+      "C:\\Program Files\\DBeaver\\dbeaver.exe"
+    ],
+    "virtual box": [
+      "C:\\Program Files\\Oracle\\VirtualBox\\VirtualBox.exe"
+    ],
+    "virtualbox": [
+      "C:\\Program Files\\Oracle\\VirtualBox\\VirtualBox.exe"
+    ],
+    "vmware": [
+      "C:\\Program Files (x86)\\VMware\\VMware Workstation\\vmware.exe",
+      "C:\\Program Files\\VMware\\VMware Workstation\\vmware.exe"
+    ],
+    "docker": [
+      "%PROGRAMFILES%\\Docker\\Docker\\Docker Desktop.exe",
+      "%LOCALAPPDATA%\\Programs\\Docker\\Docker Desktop.exe"
+    ],
+    "insomnia": [
+      "%LOCALAPPDATA%\\insomnia\\Insomnia.exe",
+      "%APPDATA%\\insomnia\\Insomnia.exe"
+    ],
+    "figma": [
+      "%LOCALAPPDATA%\\Figma\\Figma.exe",
+      "%APPDATA%\\Figma\\Figma.exe"
+    ],
+    "notion": [
+      "%LOCALAPPDATA%\\Programs\\Notion\\Notion.exe",
+      "%APPDATA%\\Notion\\Notion.exe"
+    ],
+    "trello": [
+      "%LOCALAPPDATA%\\Programs\\Trello\\Trello.exe"
+    ],
+    "whatsapp web": [
+      "%LOCALAPPDATA%\\WhatsApp\\WhatsApp.exe"
+    ]
+  },
+
+  "store_aliases": {
+    "whatsapp":      ["whatsapp", "whatsappdesktop", "5319275a.whatsappdesktop"],
+    "netflix":       ["netflix", "4df9e0f8.netflix"],
+    "spotify":       ["spotify", "spotifyab.spotifymusic"],
+    "photos":        ["photos", "microsoftwindowsphotos", "microsoft.windows.photos"],
+    "xbox":          ["xbox", "microsoftxboxapp", "gamingapp", "microsoftgamingnew"],
+    "teams":         ["msteams", "teams", "msteamsapp", "microsoftteams"],
+    "onedrive":      ["onedrive", "microsoftonedrive"],
+    "onenote":       ["onenote", "microsoftonenote"],
+    "skype":         ["skype", "skypeapp", "microsoft.skypeapp"],
+    "linkedin":      ["linkedin", "microsoft.linkedin"],
+    "tiktok":        ["tiktok", "bytedance.tiktok"],
+    "instagram":     ["instagram", "facebook.instagram"],
+    "facebook":      ["facebook", "facebook.facebook"],
+    "twitter":       ["twitter", "x", "twitterinc.twitter"],
+    "prime video":   ["primevideo", "amazonprimevideo", "amazon.primevideo"],
+    "disney+":       ["disneyplus", "disney", "disney.disneyplus"],
+    "hbo max":       ["hbomax", "max", "hbo"],
+    "hulu":          ["hulu"],
+    "twitch":        ["twitch", "twitch.tv"],
+    "amazon music":  ["amazonmusic", "amazon.amazonmusic"],
+    "apple music":   ["applemusic"],
+    "minecraft":     ["minecraft", "minecraftapp", "microsoft.minecraftuwp"],
+    "roblox":        ["roblox", "robloxcorporation.roblox"],
+    "candy crush":   ["candycrush", "king.com.candycrushsaga"],
+    "snip & sketch": ["snipandsketch", "screenclip"],
+    "windows media player": ["windowsmediaplayer", "microsoft.windowsmediaplayer"],
+    "groove":        ["groove", "zune", "microsoft.zunemusic"],
+    "movies tv":     ["moviesandtv", "zunevideo", "microsoft.zunevideo"],
+    "sticky notes":  ["stickynotes", "microsoft.microsoftstickynotes"],
+    "to do":         ["todo", "microsofttodo", "microsoft.todo"],
+    "your phone":    ["yourphone", "microsoft.yourphone"],
+    "news":          ["bingnews", "microsoft.bingnews"],
+    "weather":       ["bingweather", "microsoft.bingweather"],
+    "mixed reality": ["mixedreality", "microsoft.mixedrealityportal"],
+    "cortana":       ["cortana", "microsoft.549981c3f5f10"]
+  },
+
+  "close_processes": {
+    "chrome":             { "windows": ["chrome.exe"],                                     "macos": "Google Chrome" },
+    "firefox":            { "windows": ["firefox.exe"],                                    "macos": "firefox" },
+    "edge":               { "windows": ["msedge.exe"],                                     "macos": "Microsoft Edge" },
+    "safari":             { "windows": null,                                               "macos": "Safari" },
+    "notepad":            { "windows": ["notepad.exe"],                                    "macos": "TextEdit" },
+    "calculator":         { "windows": ["CalculatorApp.exe","Calculator.exe","calc.exe"],  "macos": "Calculator" },
+    "calc":               { "windows": ["CalculatorApp.exe","Calculator.exe","calc.exe"],  "macos": "Calculator" },
+    "paint":              { "windows": ["mspaint.exe"],                                    "macos": "Preview" },
+    "cmd":                { "windows": ["cmd.exe","WindowsTerminal.exe"],                  "macos": "Terminal" },
+    "terminal":           { "windows": ["cmd.exe","WindowsTerminal.exe"],                  "macos": "Terminal" },
+    "powershell":         { "windows": ["powershell.exe","pwsh.exe"],                      "macos": null },
+    "explorer":           { "windows": ["explorer.exe"],                                   "macos": "Finder" },
+    "finder":             { "windows": null,                                               "macos": "Finder" },
+    "task manager":       { "windows": ["Taskmgr.exe"],                                    "macos": "Activity Monitor" },
+    "activity monitor":   { "windows": null,                                               "macos": "Activity Monitor" },
+    "pages":              { "windows": null,                                               "macos": "Pages" },
+    "keynote":            { "windows": null,                                               "macos": "Keynote" },
+    "numbers":            { "windows": null,                                               "macos": "Numbers" },
+    "xcode":              { "windows": null,                                               "macos": "Xcode" },
+    "garageband":         { "windows": null,                                               "macos": "GarageBand" },
+    "imovie":             { "windows": null,                                               "macos": "iMovie" },
+    "itunes":             { "windows": ["iTunes.exe"],                                     "macos": "iTunes" },
+    "music":              { "windows": null,                                               "macos": "Music" },
+    "camera":             { "windows": ["WindowsCamera.exe"],                              "macos": null },
+    "photos":             { "windows": ["Microsoft.Photos.exe","PhotosApp.exe"],           "macos": "Photos" },
+    "mail":               { "windows": ["HxOutlook.exe"],                                  "macos": "Mail" },
+    "calendar":           { "windows": ["HxCalendarAppImm.exe"],                           "macos": "Calendar" },
+    "maps":               { "windows": ["Maps.exe"],                                       "macos": "Maps" },
+    "weather":            { "windows": ["Microsoft.BingWeather.exe"],                      "macos": null },
+    "news":               { "windows": ["Microsoft.BingNews.exe"],                         "macos": null },
+    "xbox":               { "windows": ["XboxApp.exe","GamingApp.exe"],                    "macos": null },
+    "clock":              { "windows": ["Time.exe"],                                       "macos": "Clock" },
+    "alarms":             { "windows": ["Time.exe"],                                       "macos": null },
+    "sticky notes":       { "windows": ["Microsoft.MicrosoftStickyNotes.exe"],             "macos": null },
+    "snipping tool":      { "windows": ["SnippingTool.exe"],                               "macos": null },
+    "snip":               { "windows": ["SnippingTool.exe"],                               "macos": null },
+    "paint 3d":           { "windows": ["PaintStudio.View.exe"],                           "macos": null },
+    "spotify":            { "windows": ["Spotify.exe"],                                    "macos": "Spotify" },
+    "netflix":            { "windows": ["Netflix.exe"],                                    "macos": null },
+    "whatsapp":           { "windows": ["WhatsApp.exe","WhatsAppDesktop.exe"],             "macos": "WhatsApp" },
+    "slack":              { "windows": ["slack.exe"],                                      "macos": "Slack" },
+    "teams":              { "windows": ["ms-teams.exe","Teams.exe"],                       "macos": "Microsoft Teams" },
+    "discord":            { "windows": ["Discord.exe"],                                    "macos": "Discord" },
+    "zoom":               { "windows": ["Zoom.exe"],                                       "macos": "zoom.us" },
+    "skype":              { "windows": ["Skype.exe"],                                      "macos": "Skype" },
+    "telegram":           { "windows": ["Telegram.exe"],                                   "macos": "Telegram" },
+    "signal":             { "windows": ["Signal.exe"],                                     "macos": "Signal" },
+    "vlc":                { "windows": ["vlc.exe"],                                        "macos": "VLC" },
+    "notepad++":          { "windows": ["notepad++.exe"],                                  "macos": null },
+    "vscode":             { "windows": ["Code.exe"],                                       "macos": "Visual Studio Code" },
+    "vs code":            { "windows": ["Code.exe"],                                       "macos": "Visual Studio Code" },
+    "visual studio code": { "windows": ["Code.exe"],                                       "macos": "Visual Studio Code" },
+    "visual studio":      { "windows": ["devenv.exe"],                                     "macos": null },
+    "word":               { "windows": ["WINWORD.EXE"],                                    "macos": "Microsoft Word" },
+    "excel":              { "windows": ["EXCEL.EXE"],                                      "macos": "Microsoft Excel" },
+    "powerpoint":         { "windows": ["POWERPNT.EXE"],                                   "macos": "Microsoft PowerPoint" },
+    "ppt":                { "windows": ["POWERPNT.EXE"],                                   "macos": "Microsoft PowerPoint" },
+    "outlook":            { "windows": ["OUTLOOK.EXE"],                                    "macos": "Microsoft Outlook" },
+    "onenote":            { "windows": ["ONENOTE.EXE"],                                    "macos": "Microsoft OneNote" },
+    "access":             { "windows": ["MSACCESS.EXE"],                                   "macos": null },
+    "publisher":          { "windows": ["MSPUB.EXE"],                                      "macos": null },
+    "steam":              { "windows": ["steam.exe"],                                      "macos": "Steam" },
+    "epic games":         { "windows": ["EpicGamesLauncher.exe"],                          "macos": "Epic Games Launcher" },
+    "obs":                { "windows": ["obs64.exe","obs32.exe"],                          "macos": "OBS" },
+    "obs studio":         { "windows": ["obs64.exe"],                                      "macos": "OBS" },
+    "sublime text":       { "windows": ["sublime_text.exe"],                               "macos": "Sublime Text" },
+    "postman":            { "windows": ["Postman.exe"],                                    "macos": "Postman" },
+    "github desktop":     { "windows": ["GitHubDesktop.exe"],                              "macos": "GitHub Desktop" },
+    "android studio":     { "windows": ["studio64.exe"],                                   "macos": "Android Studio" },
+    "pycharm":            { "windows": ["pycharm64.exe"],                                  "macos": "PyCharm" },
+    "intellij idea":      { "windows": ["idea64.exe"],                                     "macos": "IntelliJ IDEA" },
+    "figma":              { "windows": ["Figma.exe"],                                      "macos": "Figma" },
+    "notion":             { "windows": ["Notion.exe"],                                     "macos": "Notion" },
+    "docker":             { "windows": ["Docker Desktop.exe"],                             "macos": "Docker" },
+    "7zip":               { "windows": ["7zFM.exe"],                                       "macos": null },
+    "7-zip":              { "windows": ["7zFM.exe"],                                       "macos": null },
+    "winrar":             { "windows": ["WinRAR.exe"],                                     "macos": null },
+    "adobe reader":       { "windows": ["Acrobat.exe","AcroRd32.exe"],                     "macos": "Adobe Acrobat" },
+    "acrobat":            { "windows": ["Acrobat.exe"],                                    "macos": "Adobe Acrobat" },
+    "photoshop":          { "windows": ["Photoshop.exe"],                                  "macos": "Adobe Photoshop 2025" },
+    "illustrator":        { "windows": ["Illustrator.exe"],                                "macos": "Adobe Illustrator 2025" },
+    "premiere":           { "windows": ["Adobe Premiere Pro.exe"],                         "macos": "Adobe Premiere Pro 2025" },
+    "after effects":      { "windows": ["AfterFX.exe"],                                    "macos": "Adobe After Effects 2025" },
+    "audacity":           { "windows": ["Audacity.exe"],                                   "macos": "Audacity" },
+    "putty":              { "windows": ["putty.exe"],                                      "macos": null },
+    "filezilla":          { "windows": ["filezilla.exe"],                                  "macos": "FileZilla" },
+    "virtualbox":         { "windows": ["VirtualBox.exe"],                                 "macos": "VirtualBox" },
+    "vmware":             { "windows": ["vmware.exe"],                                     "macos": "VMware Fusion" },
+    "wordpad":            { "windows": ["wordpad.exe"],                                    "macos": null }
+  },
+
+  "whatsapp_store_ids": [
+    "5319275A.WhatsAppDesktop!WhatsApp",
+    "5319275A.WhatsAppDesktop",
+    "WhatsAppDesktop",
+    "5319275A.WhatsAppDesktop_cv1g1gvanyjgm!WhatsApp"
+  ]
+}
