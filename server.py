@@ -1,5 +1,4 @@
-﻿# server.py
-from flask import Flask, render_template, request, jsonify
+﻿from flask import Flask, render_template, request, jsonify
 import threading
 import json
 import time
@@ -9,17 +8,17 @@ import traceback
 import os
 import re
 
-# â”€â”€ Core modules â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ---- Core modules ---------------------------------------------------------
 from modules import system_core, ui, config
 
-# â”€â”€ Office Agent (Project 2) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-from utils.command_buffer    import CommandBuffer
+# ---- Office Agent (Project 2) --------------------------------------------
+from utils.command_buffer import CommandBuffer
 from utils import command_map
 from executor.excel_executor import ExcelExecutor
-from executor.word_executor  import WordExecutor
-from executor.ppt_executor   import PowerPointExecutor
-from parser.command_parser   import parse_command
-from listener.keyboard_listener  import KeyboardListener
+from executor.word_executor import WordExecutor
+from executor.ppt_executor import PowerPointExecutor
+from parser.command_parser import parse_command
+from listener.keyboard_listener import KeyboardListener
 from listener.clipboard_listener import ClipboardListener
 try:
     from listener.voice_listener import VoiceListener
@@ -28,7 +27,7 @@ except Exception:
     VoiceListener = None
     VOICE_MODULE_AVAILABLE = False
 
-# â”€â”€ Optional modules (graceful fallback) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ---- Optional modules (graceful fallback) --------------------------------
 try:
     from modules import ocr_utils
     OCR_AVAILABLE = True
@@ -68,10 +67,10 @@ try:
     import keyboard
     KEYBOARD_AVAILABLE = True
 except ImportError:
-    print("keyboard not found â€” pip install keyboard")
+    print("keyboard not found — pip install keyboard")
     KEYBOARD_AVAILABLE = False
 
-# â”€â”€ Logging â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ---- Logging --------------------------------------------------------------
 logging.basicConfig(
     filename="agent.log",
     level=logging.INFO,
@@ -81,13 +80,13 @@ logging.basicConfig(
 )
 logging.getLogger("werkzeug").setLevel(logging.ERROR)
 
-# â”€â”€ Flask app â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ---- Flask app ------------------------------------------------------------
 app = Flask(__name__)
 
-# â”€â”€ Shared state â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ---- Shared state ---------------------------------------------------------
 last_ocr = {"text": "", "pending": False}
 
-# â”€â”€ Office Agent setup â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ---- Office Agent setup ---------------------------------------------------
 OFFICE_APPS = {"excel", "word", "powerpoint", "ppt"}
 OFFICE_OUTPUTS = {
     "excel": "output.xlsx",
@@ -95,14 +94,14 @@ OFFICE_OUTPUTS = {
     "powerpoint": "output.pptx",
     "ppt": "output.pptx",
 }
-_cmd_buf            = CommandBuffer()
+_cmd_buf = CommandBuffer()
 _clipboard_listener = ClipboardListener(_cmd_buf)
-_keyboard_listener  = KeyboardListener(_handle_global_command := None, _cmd_buf)
-_voice_listener     = VoiceListener(_handle_global_command) if VOICE_MODULE_AVAILABLE else None
-voice_state         = {"enabled": False}
+_keyboard_listener = KeyboardListener(_handle_global_command := None, _cmd_buf)
+_voice_listener = VoiceListener(_handle_global_command) if VOICE_MODULE_AVAILABLE else None
+voice_state = {"enabled": False}
 
 
-# â”€â”€ Office Agent helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ---- Office Agent helpers -------------------------------------------------
 def _safe_speak(text):
     try:
         ui.speak(text)
@@ -125,7 +124,6 @@ def _resolve_actions(app_name, command_text):
     if actions:
         command_map.save_actions(app_name, command_text, actions)
         return command_text, actions, "json-parser"
-    
     return command_text, [], "json-parser"
 
 
@@ -145,10 +143,8 @@ def _run_office_actions(app_name, actions, file_path=None):
         for action in actions:
             ok = bool(executor.run(action))
             action_name = action.get("action", "unknown")
-            if ok:
-                executed.append(action_name)
-            else:
-                failures.append(f"{action_name} failed")
+            if ok: executed.append(action_name)
+            else: failures.append(f"{action_name} failed")
         wb.save(output_path)
     elif app_name == "word":
         from docx import Document
@@ -157,10 +153,8 @@ def _run_office_actions(app_name, actions, file_path=None):
         for action in actions:
             ok = bool(executor.run(action))
             action_name = action.get("action", "unknown")
-            if ok:
-                executed.append(action_name)
-            else:
-                failures.append(f"{action_name} failed")
+            if ok: executed.append(action_name)
+            else: failures.append(f"{action_name} failed")
         doc.save(output_path)
     elif app_name in ("powerpoint", "ppt"):
         from pptx import Presentation
@@ -169,10 +163,8 @@ def _run_office_actions(app_name, actions, file_path=None):
         for action in actions:
             ok = bool(executor.run(action))
             action_name = action.get("action", "unknown")
-            if ok:
-                executed.append(action_name)
-            else:
-                failures.append(f"{action_name} failed")
+            if ok: executed.append(action_name)
+            else: failures.append(f"{action_name} failed")
         prs.save(output_path)
     else:
         failures.append(f"Unsupported app: {app_name}")
@@ -237,28 +229,28 @@ def _handle_global_command(raw_text):
         logging.error(f"Global command error: {e}\n{traceback.format_exc()}")
 
 
-# Patch the keyboard listener callback now that function is defined
+# Patch the keyboard/voice listener callbacks now that _handle_global_command is defined
 _keyboard_listener.on_command = _handle_global_command
 if _voice_listener:
     _voice_listener.on_command = _handle_global_command
 
 
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-#  ROUTES
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ===========================================================================
+# ROUTES
+# ===========================================================================
 
 @app.route("/")
 def index():
     return render_template("index.html")
 
 
-# â”€â”€ SYSTEM COMMANDS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ---- System commands ------------------------------------------------------
 
 @app.route("/execute", methods=["POST"])
 def execute():
     try:
         data = request.json
-        cmd  = data.get("command", "").lower().strip()
+        cmd = data.get("command", "").lower().strip()
         logging.info(f"Command: {cmd}")
 
         if cmd.startswith(("close ", "shut ", "exit ")):
@@ -291,7 +283,7 @@ def execute():
         return jsonify(status="fail", message=f"Error: {str(e)}")
 
 
-# â”€â”€ OFFICE AGENT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ---- Office Agent ---------------------------------------------------------
 
 @app.route("/office/execute", methods=["POST"])
 def office_execute():
@@ -355,22 +347,17 @@ def office_command():
         return jsonify(status="fail", message=f"Error: {str(e)}")
 
 
-# â”€â”€ OCR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-
-# VOICE CONTROL
+# ---- Voice control --------------------------------------------------------
 
 @app.route("/voice/status", methods=["GET"])
 def voice_status():
     if not _voice_listener:
         return jsonify(
-            status="fail",
-            available=False,
-            enabled=False,
+            status="fail", available=False, enabled=False,
             message="Voice module unavailable. Install SpeechRecognition + PyAudio."
         )
     heard = _voice_listener.last_heard
-    heard_age = time.time() - (_voice_listener.last_heard_at or 0)
-    if heard_age > 8:
+    if time.time() - (_voice_listener.last_heard_at or 0) > 8:
         heard = ""
     return jsonify(
         status="success",
@@ -404,6 +391,8 @@ def voice_stop():
     return jsonify(status="success", message="Voice listener stopped")
 
 
+# ---- OCR ------------------------------------------------------------------
+
 @app.route("/ocr/snip", methods=["POST"])
 def ocr_snip():
     try:
@@ -417,7 +406,7 @@ def ocr_snip():
         if not path:
             return jsonify(status="fail", message="Snip cancelled")
         text = ocr_utils.image_to_text(path)
-        last_ocr["text"]    = text
+        last_ocr["text"] = text
         last_ocr["pending"] = False
         return jsonify(status="success", text=text)
     except Exception as e:
@@ -432,7 +421,7 @@ def ocr_screenshot():
             return jsonify(status="fail", message="OCR not available")
         path = ocr_utils.capture_fullscreen()
         text = ocr_utils.image_to_text(path)
-        last_ocr["text"]    = text
+        last_ocr["text"] = text
         last_ocr["pending"] = False
         return jsonify(status="success", text=text)
     except Exception as e:
@@ -452,9 +441,9 @@ def ocr_file():
         if not path:
             return jsonify(status="fail", message="No file selected")
         text = ocr_utils.image_to_text(path)
-        last_ocr["text"]    = text
+        last_ocr["text"] = text
         last_ocr["pending"] = False
-        return jsonify(status="success", text=text, message=f"OCR complete â€” {len(text)} chars")
+        return jsonify(status="success", text=text, message=f"OCR complete — {len(text)} chars")
     except Exception as e:
         print(traceback.format_exc())
         return jsonify(status="fail", message=f"Error: {str(e)}")
@@ -489,7 +478,7 @@ def ocr_poll():
             return jsonify(
                 status="ready",
                 text=last_ocr["text"],
-                message=f"Hotkey OCR complete â€” {len(last_ocr['text'])} chars"
+                message=f"Hotkey OCR complete — {len(last_ocr['text'])} chars"
             )
         return jsonify(status="waiting")
     except Exception as e:
@@ -541,7 +530,7 @@ def ocr_clipboard():
         return jsonify(status="fail", message=f"Error: {str(e)}")
 
 
-# â”€â”€ PDF READER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ---- PDF Reader -----------------------------------------------------------
 
 @app.route("/reader/open", methods=["POST"])
 def reader_open():
@@ -619,13 +608,10 @@ def reader_status():
     try:
         return jsonify(pdf_reader.get_status())
     except Exception:
-        return jsonify(
-            is_reading=False, is_paused=False,
-            current_page=0, total_pages=0, speed=150
-        )
+        return jsonify(is_reading=False, is_paused=False, current_page=0, total_pages=0, speed=150)
 
 
-# â”€â”€ PDF TOOLS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ---- PDF Tools ------------------------------------------------------------
 
 @app.route("/pdf/merge", methods=["POST"])
 def pdf_merge():
@@ -642,7 +628,7 @@ def pdf_merge():
         out = pdf_utils.merge_pdfs(paths)
         if not out:
             return jsonify(status="fail", message="Save cancelled.")
-        return jsonify(status="success", message=f"Merged {len(paths)} PDFs â†’ {out}")
+        return jsonify(status="success", message=f"Merged {len(paths)} PDFs → {out}")
     except Exception as e:
         print(traceback.format_exc())
         return jsonify(status="fail", message=f"Error: {str(e)}")
@@ -670,8 +656,8 @@ def pdf_create():
     try:
         if not PDF_AVAILABLE:
             return jsonify(status="fail", message="Install fpdf2: pip install fpdf2")
-        data  = request.json
-        text  = data.get("text", "").strip()
+        data = request.json
+        text = data.get("text", "").strip()
         title = (data.get("title", "Report") or "Report").strip()
         if not text:
             return jsonify(status="fail", message="No text provided")
@@ -684,7 +670,7 @@ def pdf_create():
         return jsonify(status="fail", message=f"Error: {str(e)}")
 
 
-# â”€â”€ PDF EDITOR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ---- PDF Editor -----------------------------------------------------------
 
 @app.route("/editor/open", methods=["POST"])
 def editor_open():
@@ -697,12 +683,7 @@ def editor_open():
         data = pdf_editor.extract_pdf_text(path)
         if data.get("status") != "success":
             return jsonify(status="fail", message=data.get("message", "Failed to open PDF"))
-        return jsonify(
-            status="success",
-            file_path=path,
-            pages=data["pages"],
-            total_pages=data["total_pages"]
-        )
+        return jsonify(status="success", file_path=path, pages=data["pages"], total_pages=data["total_pages"])
     except Exception as e:
         logging.error(traceback.format_exc())
         return jsonify(status="fail", message=str(e))
@@ -713,7 +694,7 @@ def editor_render_page():
     try:
         if not PDF_EDITOR_AVAILABLE:
             return jsonify(status="fail", message="PDF Editor not available")
-        data     = request.json
+        data = request.json
         pdf_path = data.get("file_path")
         page_num = data.get("page_num", 0)
         if not pdf_path:
@@ -732,9 +713,9 @@ def editor_save():
     try:
         if not PDF_EDITOR_AVAILABLE:
             return jsonify(status="fail", message="PDF Editor not available")
-        data     = request.json
+        data = request.json
         pdf_path = data.get("file_path")
-        edits    = data.get("edits", [])
+        edits = data.get("edits", [])
         if not pdf_path:
             return jsonify(status="fail", message="No file path provided")
         result = pdf_editor.save_edited_pdf(pdf_path, edits)
@@ -772,8 +753,8 @@ def editor_fill_form():
     try:
         if not PDF_EDITOR_AVAILABLE:
             return jsonify(status="fail", message="PDF Editor not available")
-        data      = request.json
-        pdf_path  = data.get("file_path")
+        data = request.json
+        pdf_path = data.get("file_path")
         form_data = data.get("form_data", {})
         if not pdf_path:
             return jsonify(status="fail", message="No file path provided")
@@ -791,56 +772,45 @@ def editor_get_field_options():
     try:
         if not PDF_EDITOR_AVAILABLE:
             return jsonify(status="fail", message="PDF Editor not available")
-        data       = request.json
-        pdf_path   = data.get("file_path")
+        data = request.json
+        pdf_path = data.get("file_path")
         field_name = data.get("field_name")
-        options    = pdf_editor.get_form_field_options(pdf_path, field_name)
+        options = pdf_editor.get_form_field_options(pdf_path, field_name)
         return jsonify(status="success", field_name=field_name, options=options)
     except Exception as e:
         return jsonify(status="fail", message=f"Error: {str(e)}")
 
 
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-#  ENTRY POINT
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ===========================================================================
+# ENTRY POINT
+# ===========================================================================
 
 if __name__ == "__main__":
 
-    # â”€â”€ OCR snip overlay (must be on main thread) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    # ---- OCR snip overlay (must be on main thread) ------------------------
     if OCR_AVAILABLE:
-        threading.Thread(
-            target=ocr_utils.run_snip_overlay_main_thread,
-            daemon=True
-        ).start()
+        threading.Thread(target=ocr_utils.run_snip_overlay_main_thread, daemon=True).start()
 
-    # â”€â”€ OCR keyboard hotkeys â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    # ---- OCR keyboard hotkeys ---------------------------------------------
     if KEYBOARD_AVAILABLE and OCR_AVAILABLE:
         keyboard.add_hotkey(
             "ctrl+shift+s",
             lambda: threading.Thread(
-                target=ocr_utils.trigger_snip_and_ocr,
-                args=(last_ocr,), daemon=True
+                target=ocr_utils.trigger_snip_and_ocr, args=(last_ocr,), daemon=True
             ).start()
         )
         keyboard.add_hotkey(
             "ctrl+shift+f",
             lambda: threading.Thread(
-                target=ocr_utils.trigger_screenshot_and_ocr,
-                args=(last_ocr,), daemon=True
+                target=ocr_utils.trigger_screenshot_and_ocr, args=(last_ocr,), daemon=True
             ).start()
         )
-        print("ðŸ”‘  Ctrl+Shift+S â†’ Snip OCR  |  Ctrl+Shift+F â†’ Fullscreen OCR")
+        print("🔑  Ctrl+Shift+S → Snip OCR  |  Ctrl+Shift+F → Fullscreen OCR")
 
-    # â”€â”€ Global Office Agent listeners â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-    threading.Thread(
-        target=_clipboard_listener.start,
-        daemon=True, name="ClipboardListener"
-    ).start()
-    threading.Thread(
-        target=_keyboard_listener.start,
-        daemon=True, name="KeyboardListener"
-    ).start()
-    print("âŒ¨ï¸   Global agent listener active")
+    # ---- Global Office Agent listeners ------------------------------------
+    threading.Thread(target=_clipboard_listener.start, daemon=True, name="ClipboardListener").start()
+    threading.Thread(target=_keyboard_listener.start, daemon=True, name="KeyboardListener").start()
+    print("⌨️   Global agent listener active")
     print("     Type  agent: excel: <command>  anywhere + Enter")
 
     if _voice_listener and _voice_listener.available:
@@ -850,7 +820,7 @@ if __name__ == "__main__":
         else:
             print(f"Voice listener not started: {_voice_listener.last_error}")
 
-    # â”€â”€ Start Flask â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    # ---- Start Flask ------------------------------------------------------
     flask_thread = threading.Thread(
         target=lambda: app.run(host="127.0.0.1", port=5000, debug=False),
         daemon=True
@@ -858,17 +828,16 @@ if __name__ == "__main__":
     flask_thread.start()
     time.sleep(1)
 
-    # â”€â”€ Open browser â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    # ---- Open browser -----------------------------------------------------
     webbrowser.open("http://127.0.0.1:5000")
-    print("âœ…  Agent running at http://127.0.0.1:5000")
+    print("✅  Agent running at http://127.0.0.1:5000")
 
-    # â”€â”€ Dialog listener MUST be on main thread â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    # ---- Dialog listener must be on main thread ---------------------------
     if PDF_AVAILABLE:
         pdf_utils.run_dialog_listener()
     else:
-        # Keep main thread alive if PDF not available
         try:
             while True:
                 time.sleep(1)
         except KeyboardInterrupt:
-            print("\nðŸ‘‹ Agent stopped.")
+            print("\n👋 Agent stopped.")
